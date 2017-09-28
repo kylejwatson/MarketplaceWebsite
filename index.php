@@ -16,7 +16,7 @@
         <section id="interests">
             <p> Please enter your details below:- </p>
             <form name="form1" method="post" action="passingdata.php">
-            <label>Date of Birth (in DD/MM/YY format):</label>
+            <label>Date of Birth (in DD/MM/YYYY format):</label>
             <input type="date" name="date">
             <label>Password:</label>
             <input type="password" name="password">

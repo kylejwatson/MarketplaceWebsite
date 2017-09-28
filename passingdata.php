@@ -34,15 +34,16 @@
         ?>
             <?php
             list($dd,$mm,$yyyy) = explode("/",$_POST['date']);
-            $date = date_create_from_format("d/m/y", $_POST['date']);
-            if($date > date_create()){
-                echo "<p><strong> Please enter a date before today </strong></p>";
+            $year = intval($yyyy);
+            $curYear = (int)date_create()->format("Y");
+            if(intval($dd) != 0 && intval($mm) != 0 && $year != 0){
+                echo date_create()->format("Y");
+            }else{
+                echo "<p><strong> Please enter a valid date </strong></p>";
                 echo "<label>Date of Birth (in DD/MM/YY format):</label>
                 <input type=\"date\" name=\"date\">
                 <input type=\"submit\" name=\"Submit\" value=\"Submit\">
                 <input type=\"reset\" name=\"reset\" value=\"Reset\">";
-            }else{
-                echo $date->format('d-m-y');
             }
             ?>
 

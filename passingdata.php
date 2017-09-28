@@ -18,24 +18,25 @@
         <?php
         /**
          * Created by PhpStorm.
-         * User: Kylw
+         * User: Kyle
          * Date: 26/09/2017
          * Time: 12:30
          */
 
-        echo "Hello " . $_POST['firstname']. " ". $_POST['surname'] . ". ";
+        echo "<p>Hello " . $_POST['firstname']. " ". $_POST['surname'] . ". ";
         echo "You are studying " . $_POST['course'] . " and you are ";
         $campus;
         if(!isset($_POST['campus'])) {
             echo "not ";
         }
-        echo "living on campus.";
+        echo "living on campus.</p>";
         $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
         ?>
             <?php
+            list($dd,$mm,$yyyy) = explode("/",$_POST['date']);
             $date = date_create_from_format("d/m/y", $_POST['date']);
             if($date > date_create()){
-                echo "<br> Please enter a date before today <br>";
+                echo "<p><strong> Please enter a date before today </strong></p>";
                 echo "<label>Date of Birth (in DD/MM/YY format):</label>
                 <input type=\"date\" name=\"date\">
                 <input type=\"submit\" name=\"Submit\" value=\"Submit\">

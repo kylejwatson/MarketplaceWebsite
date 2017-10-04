@@ -12,10 +12,10 @@
     <script src="script.js"></script>-->
 </head>
 <body>
-    <main id="bio" tabindex="-1">
-        <section id="interests">
-            <p> Please enter your details below:- </p>
-            <form name="form1" method="post" action="passingdata.php">
+<main id="bio" tabindex="-1">
+    <section id="interests">
+        <p> Please enter your details below:- </p>
+        <form name="form1" method="post" action="passingdata.php">
             <label>Date of Birth (in DD/MM/YYYY format):</label>
             <input type="date" name="date">
             <label>Password:</label>
@@ -36,8 +36,8 @@
             <input type="checkbox" name="campus" value="campus">
             <input type="submit" name="Submit" value="Submit">
             <input type="reset" name="reset" value="Reset">
-    </form>
-        </section>
-    </main>
+        </form>
+    </section>
+</main>
 </body>
 </html>

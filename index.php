@@ -45,13 +45,17 @@
             echo " </p>";
         }
 
-        function floydsTriangle($n){
+        function floydsTriangle($n, $b){
             $counter = 1;
             for($i = 0; $i <= $n; $i++){
                 for($ii = 0; $ii < $i; $ii++){
                     //echo " $counter &#x1F";
                     //echo $counter+100;
-                    echo $counter;
+                    if($b) {
+                        $s = dechex($counter + 100);
+                        echo "&#x$counter$s";
+                    }
+                    echo " $counter";
                     $counter++;
                 }
                 echo "<br>";
@@ -65,26 +69,50 @@
             return factorial($n-1)*$n;
         }
         if( isset($_POST['n'])) {
-            $n = $_POST['n'];
-            $fac = factorial($n);
-            echo "<p>Factorial of $n : $fac</p><p>Floyds Triangle:</p>";
-            floydsTriangle($n);
+            $n = (int)$_POST['n'];
+
+            if(is_int($n) && $n>1) {
+                $fac = factorial($n);
+                echo "<p>Factorial of $n : $fac</p><p>Floyds Triangle:</p>";
+                floydsTriangle($n, false);
+            }else{
+                echo "<p>Floyds Triangle Emoji:</p>";
+                floydsTriangle(20, true);
+            }
             $myArray = Array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62,
                 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73);
             arrayVals($myArray);
+
         }
-
-        $response = file_get_contents("http://www.classifiedsteam.co.uk/for-sale/5-gauge-locomotives-and-parts");
-        //echo "<textarea> $response </textarea>";
-
-        $titlePos = strpos($response, 'title="');
-        $title = substr($response, $titlePos, -1);
         ?>
     </section>
     <section>
+        <table>
+
         <?php
 
+        $restOf = file_get_contents("http://www.classifiedsteam.co.uk/for-sale/5-gauge-locomotives-and-parts");
+        //echo "<textarea> $response </textarea>";
+
+        while(strpos($restOf, 'class="title" title="')) {
+            echo "<tr>";
+            $restOf = substringMatch($restOf,'class="title" title="', '">');
+            $restOf = substringMatch($restOf,'class="currency-value">','</span>');
+            echo "</tr>";
+        }
+        function substringMatch($string, $start, $end){
+            echo "<td>";
+            $nextPos = strpos($string, $start);
+            $string = substr($string, $nextPos + strlen($start), -1);
+            //$restOf = substr($restOf,7,-1);
+            $pos = strpos($string, $end);
+            echo $sub = substr($string, 0, $pos);
+            return $string = substr($string, $pos, -1);
+            echo "</td>";
+        }
+
         ?>
+        </table>
     </section>
 </main>
 </body>

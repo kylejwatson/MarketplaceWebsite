@@ -166,8 +166,8 @@ a:hover {
 }
 
 section, main#section{
-	/*background-image: url("images/box_sect.svg");*/
-	background-color: #b1e3fa;
+	background-image: url("images/box_sect.svg");
+	//background-color: #b1e3fa;
 	background-size: 100% 100%;
 	padding-left: 3.5%;
 	padding-top:1.5%;

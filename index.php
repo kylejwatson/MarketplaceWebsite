@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> Kyle Watson's Portfolio - Personal </title>
+    <title> Workshop 3 </title>
     <meta charset="UTF-8" />
-    <meta name="keywords" content="Portfolio, Student, Developer, Counter-Strike">
-    <meta name="description" content="A simple portfolio to show off projects and attributes.">
-    <meta name="author" content="Kyle Watson">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script.js"></script>-->
 </head>
 <body>
-<main id="bio" tabindex="-1">
+<h1>Floyd & Factorial:</h1>
+<main tabindex="-1">
     <section>
         <form name="form1" method="post" action="index.php">
-            <label>Enter a positive integer:</label>
+            <label> Enter a positive integer: </label>
             <input type="text" name="n">
             <input type="submit" name="Submit" value="Submit">
             <input type="reset" name="reset" value="Reset">
@@ -73,10 +71,11 @@
 
             if(is_int($n) && $n>1) {
                 $fac = factorial($n);
-                echo "<p>Factorial of $n : $fac</p><p>Floyds Triangle:</p>";
+                echo "<p><h3>Floyds Triangle:</h3>";
                 floydsTriangle($n, false);
+                echo "</p><p>Factorial of $n : $fac</p>";
             }else{
-                echo "<p>Floyds Triangle Emoji:</p>";
+                echo "<p><h3>Floyds Triangle Emoji:</h3></p>";
                 floydsTriangle(20, true);
             }
             $myArray = Array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62,
@@ -87,8 +86,12 @@
         ?>
     </section>
     <section>
+        <h2> Classified Steam Web Scraper</h2>
         <table>
-
+            <tr>
+                <td><h2>Title</h2></td>
+                <td><h2>Price</h2></td>
+            </tr>
         <?php
 
         $restOf = file_get_contents("http://www.classifiedsteam.co.uk/for-sale/5-gauge-locomotives-and-parts");

@@ -2,4 +2,4 @@
 
 $view = new stdClass();
 $view->pageTitle = 'MVC template';
-require_once('Views/page1.phtml');
+require_once('Views/abouttemplate.phtml');

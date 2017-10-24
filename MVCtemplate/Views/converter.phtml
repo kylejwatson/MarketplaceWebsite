@@ -1,0 +1,22 @@
+<?php require('template/header.phtml') ?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <div>
+        <label>Convert </label>
+        <input type="text" name="number" value="<?php if (isset($_POST['number'])) {
+            echo $_POST['number']; 	} ?>"/>
+    </div>
+    <div>
+        <label>From </label>
+        <select name="unit">
+            <option>km to miles</option>
+            <option>miles to km</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="submit" name="submit" />
+    </div>
+</form>
+<?php if (isset($view->result)) : ?>
+    <p><?php echo $view->result; ?></p>
+<?php endif; ?>
+<?php require('template/footer.phtml') ?>

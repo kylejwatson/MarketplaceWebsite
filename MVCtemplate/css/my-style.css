@@ -36,3 +36,18 @@
     background-color: #000;
     color: #fff;
 }
+
+li {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .nav_item li {
+        text-align: center;
+        display: inline;
+        width: 100%;
+    }
+    .navbar_default ul {
+        display: flex;
+    }
+}

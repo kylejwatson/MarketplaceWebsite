@@ -20,6 +20,18 @@ class Converter
                 $result = $this->number * 1.609;
             } elseif ($this->unit == 'km to miles') {
                 $result = $this->number * 0.621;
+            } elseif ($this->unit == 'km to parsecs') {
+                $result = $this->number / 3.0857;
+                $result .= "×10<sup>-13</sup>";
+            } elseif ($this->unit == 'miles to parsecs') {
+                $result = $this->number / 1.9174;
+                $result .= "×10<sup>-13</sup>";
+            } elseif ($this->unit == 'parsecs to km') {
+                $result = $this->number * 3.0857;
+                $result .= "×10<sup>13</sup>";
+            } elseif ($this->unit == 'parsecs to miles') {
+                $result = $this->number * 1.9174;
+                $result .= "×10<sup>13</sup>";
             } else {
                 $result = 'error';
             }

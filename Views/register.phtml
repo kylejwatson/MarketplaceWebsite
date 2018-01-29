@@ -1,0 +1,19 @@
+<?php require('template/header.phtml') ?>
+
+<h3>Register</h3>
+<form action="" method="post">
+    <div>
+        <label>Email: </label>
+        <input type="text"  name="username" value=""/>
+        <label>Password: </label>
+        <input type="text"  name="password" value=""/>
+        <input class="btn" type="submit" value="Register" name="submit" />
+    </div>
+</form>
+<div class="col-lg-3 col-lg-offset-1 alert alert-success">
+    <?php if(isset($view->status)) {
+        echo "<span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span><br>";
+        echo $view->status;
+    }?>
+</div>
+<?php require('template/footer.phtml') ?>

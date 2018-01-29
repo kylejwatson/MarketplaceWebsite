@@ -37,11 +37,12 @@ class User
     public function createUser($conn){
         // prepare and bind
         if($this->checkUserExists($conn)){
-            return "Failed: User Exists";
+            return false;
         }else{
             $stmt = $conn->prepare("INSERT INTO users (username,password) VALUES (:username, :password)");
             $stmt->bindParam('username', $this->username);
-            $stmt->bindParam('password', password_hash($this->password, PASSWORD_DEFAULT));
+            $hashedPass = password_hash($this->password, PASSWORD_DEFAULT);
+            $stmt->bindParam('password', $hashedPass);
 
             $result = $stmt->execute();
             if(!$result){

@@ -7,18 +7,24 @@
         <input type="text"  name="username" value=""/>
         <label>Password: </label>
         <input type="text"  name="password" value=""/>
+        <label>Address line 1: </label>
+        <input type="text"  name="address1" value=""/>
+        <label>Address line 2: </label>
+        <input type="text"  name="address2" value=""/>
+        <label>Mobile Phone Number: </label>
+        <input type="text"  name="mobile" value=""/>
         <input class="btn" type="submit" value="Register" name="submit" />
     </div>
 </form>
 <?php if(isset($view->status)) : ?>
     <div class="alert alert-<?php echo (isset($view->error) ? 'danger' : 'success'); ?>">
         <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
-        <div> <?php echo $view->status;
-            if($view->error == 1): ?>
+        <div>
+            <?php echo $view->status; if(isset($view->error)): ?>
                 <div>
                     <?php require('template/login.phtml'); ?>
                 </div>
-            <?php endif; ?>
+            <?php endif;?>
         </div>
     </div>
 <?php endif;

@@ -11,15 +11,17 @@ if(isset($_POST['submit'])){
         $server = new DBConnection();
         $conn = $server->connect();
         $user = new User($_POST['username'], $_POST['password']);
-        if($user->createUser($conn)){
+        $result = $user->createUser($conn, $_POST['address1'], $_POST['address2'], $_POST['mobile']);
+        if($result == "Success"){
             session_unset();
             session_destroy();
             $view->status = "Registered Successfully";
             session_start();
             $_SESSION["user"] = $user->username;
-            //make session or somet
         }else{
-            $view->status = "User with that email already exists";
+            $view->status = $result;
+            session_unset();
+            session_destroy();
             $view->error = 1;
         }
         $conn = null;

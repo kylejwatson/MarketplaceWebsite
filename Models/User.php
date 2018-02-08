@@ -8,17 +8,16 @@
 
 class User
 {
-    var $username = '', $password = '';
+    var $username = '';
 
     /**
      * User constructor.
      * @param string $username
      * @param string $password
      */
-    public function __construct($username, $password)
+    public function __construct($username)
     {
         $this->username = $username;
-        $this->password = $password;
     }
 
     public function checkUserExists($conn){
@@ -33,15 +32,15 @@ class User
         }elseif(!$result){
             return "NA";
         }
-        return "User exists";
+        return "Email already registered";
     }
 
-    public function createUser($conn, $address1, $address2, $mobile){
+    public function createUser($conn, $password, $address1, $address2, $mobile){
         $userExists = $this->checkUserExists($conn);
         if($userExists == "NA") {
             $stmt = $conn->prepare("INSERT INTO users (username,password,address1,address2,mobile) VALUES (:username, :password, :address1, :address2, :mobile)");
             $stmt->bindParam('username', $this->username);
-            $hashedPass = password_hash($this->password, PASSWORD_DEFAULT);
+            $hashedPass = password_hash($password, PASSWORD_DEFAULT);
             $stmt->bindParam('password', $hashedPass);
             $stmt->bindParam('address1', $address1);
             $stmt->bindParam('address2', $address2);
@@ -56,7 +55,7 @@ class User
         return $userExists;
     }
 
-    public function login($conn){
+    public function login($conn, $password){
         $stmt = $conn->prepare("SELECT password FROM users WHERE username = :username");
         $stmt->bindParam(':username', $this->username);
         $stmt->execute();
@@ -65,7 +64,7 @@ class User
             var_dump($stmt->errorInfo());
             die("Statement Failed: ".$stmt->errorInfo()[0]);
         }else{
-            return password_verify($this->password, $result);
+            return password_verify($password, $result);
         }
     }
 

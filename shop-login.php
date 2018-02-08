@@ -7,13 +7,13 @@ if(session_status() == 1)
 if(isset($_SESSION["user"]))
     $view->user = $_SESSION["user"];
 
-require_once('Models/User.php');
-require_once('Models/DBConnection.php');
 if(isset($_POST['submit'])){
+    require_once('Models/User.php');
+    require_once('Models/DBConnection.php');
     $server = new DBConnection();
     $conn = $server->connect();
-    $user = new User($_POST['username'], $_POST['password']);
-    if($user->login($conn)){
+    $user = new User($_POST['username']);
+    if($user->login($conn, $_POST['password'])){
         $view->status = "Logged In Successfully";
 
         session_unset();
@@ -23,12 +23,11 @@ if(isset($_POST['submit'])){
         $_SESSION["user"] = $user->username;
         $view->user = $_SESSION["user"];
         require_once('index.php');
+        die();
         //make session or somet
     }else{
         $view->status = "Username or password entered incorrectly";
-        require_once('Views/shop-login.phtml');
     }
     $conn = null;
-}else{
-    require_once('Views/shop-login.phtml');
 }
+require_once('Views/shop-login.phtml');

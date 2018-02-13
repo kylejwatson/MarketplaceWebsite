@@ -8,7 +8,7 @@
 
 class DBConnection
 {
-    var $servername = "helios.csesalford.com";
+    var $servername = "localhost";
     var $username = "stc905";
     var $password = "turtlebrainholocaust";
     var $dbname = "stc905";

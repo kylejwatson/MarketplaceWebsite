@@ -10,40 +10,18 @@ else{
     die();
 }
 $view->pageTitle = 'Create Advert';
+
 if(isset($_POST['submit'])) {
     require_once('Models/Advert.php');
     require_once('Models/DBConnection.php');
     $server = new DBConnection();
     $conn = $server->connect();
     $ad = new Advert('');
-    $adSuccess = $ad->createAd($conn,$view->user,$_POST['title'],$_POST['desc'],$_POST['price']);
+    $adSuccess = $ad->createAd($conn,$view->user,$_POST['title'],$_POST['desc'],$_POST['price'],$_FILES["fileToUpload"]);
     if($adSuccess) {
-        $target_dir = "images/adverts/";
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION));
-        $target_file = $target_dir . $ad->id . "." . $imageFileType;
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if ($check !== false) {
-            $view->status = "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            $view->status = "File is not an image.";
-            $uploadOk = 0;
-        }
-        if (file_exists($target_file)) {
-            $view->status = "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
-            $view->status = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $view->status = "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        } else {
-            $view->status = "Sorry, there was an error uploading your file.";
-        }
+        $_GET["id"] = $ad->id;
+        require_once("advert.php");
+        die();
     }else{
         $view->status = $adSuccess;
     }

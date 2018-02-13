@@ -5,8 +5,10 @@ if(session_status() == 1)
     session_start();
 if(isset($_SESSION["user"]))
     $view->user = $_SESSION["user"];
-else
-    //do somet to redirect page
+else {
+    require_once('shop-login.php');
+    die();
+}
 $view->pageTitle = $view->user;
 
 require_once('Models/User.php');

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0b0c971-f0dd-4621-8cf4-98b4b13b3b64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Advert.php" afterPath="$PROJECT_DIR$/Models/Advert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/createadvert.phtml" afterPath="$PROJECT_DIR$/Views/createadvert.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/template/header.phtml" afterPath="$PROJECT_DIR$/Views/template/header.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/template/logout.phtml" afterPath="$PROJECT_DIR$/Views/template/logout.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createadvert.php" afterPath="$PROJECT_DIR$/createadvert.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,21 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="187">
+              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createadvert.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createadvert.php">
+      <file leaf-file-name="header.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="340">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,13 +63,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="38" />
+              <folding>
+                <marker date="1517862309144" expanded="true" signature="471:524" ph="SELECT usern... users" />
+                <marker date="1517862309144" expanded="true" signature="1052:1175" ph="INSERT INTO users... " />
+                <marker date="1517862309144" expanded="true" signature="1839:1892" ph="SELECT passw... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createadvert.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/createadvert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Advert.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/Advert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="272">
+              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
               <folding>
-                <marker date="1518095967057" expanded="true" signature="404:493" ph="INSERT INTO adverts... " />
+                <marker date="1518516508959" expanded="true" signature="404:507" ph="INSERT INTO adverts... " />
               </folding>
             </state>
           </provider>
@@ -75,8 +102,18 @@
       <file leaf-file-name="createadvert.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/createadvert.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="204">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/template/logout.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="130" lean-forward="false" selection-start-line="0" selection-start-column="130" selection-end-line="0" selection-end-column="130" />
               <folding />
             </state>
           </provider>
@@ -102,20 +139,20 @@
         <option value="$PROJECT_DIR$/MVCtemplate/Views/template/header.phtml" />
         <option value="$PROJECT_DIR$/Models/ServerConnection.php" />
         <option value="$PROJECT_DIR$/Views/template/login.phtml" />
-        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
         <option value="$PROJECT_DIR$/Views/shop-login.phtml" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Views/register.phtml" />
         <option value="$PROJECT_DIR$/Models/DBConnection.php" />
-        <option value="$PROJECT_DIR$/Views/template/logout.phtml" />
         <option value="$PROJECT_DIR$/Models/User.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/shop-login.php" />
-        <option value="$PROJECT_DIR$/Views/createadvert.phtml" />
-        <option value="$PROJECT_DIR$/createadvert.php" />
-        <option value="$PROJECT_DIR$/Models/Advert.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/user.php" />
+        <option value="$PROJECT_DIR$/Views/template/header.phtml" />
+        <option value="$PROJECT_DIR$/Views/template/logout.phtml" />
+        <option value="$PROJECT_DIR$/Views/createadvert.phtml" />
+        <option value="$PROJECT_DIR$/Models/Advert.php" />
+        <option value="$PROJECT_DIR$/createadvert.php" />
       </list>
     </option>
   </component>
@@ -311,12 +348,12 @@
       <workItem from="1517329632254" duration="529000" />
       <workItem from="1517574376400" duration="4409000" />
       <workItem from="1517855863480" duration="6263000" />
-      <workItem from="1518091805862" duration="5394000" />
+      <workItem from="1518091805862" duration="8191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55451000" />
+    <option name="totallyTimeSpent" value="58248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -324,7 +361,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16105418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30283913" sideWeight="0.5087848" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30283913" sideWeight="0.5087848" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30283913" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
@@ -356,13 +393,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="260" column="37" lean-forward="false" selection-start-line="260" selection-start-column="37" selection-end-line="260" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/passingdata.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
@@ -571,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -603,26 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-          <folding>
-            <marker date="1517862309144" expanded="true" signature="471:524" ph="SELECT usern... users" />
-            <marker date="1517862309144" expanded="true" signature="1052:1175" ph="INSERT INTO users... " />
-            <marker date="1517862309144" expanded="true" signature="1839:1892" ph="SELECT passw... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/logout.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="73" lean-forward="false" selection-start-line="0" selection-start-column="70" selection-end-line="0" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -639,28 +641,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/createadvert.phtml">
+    <entry file="file://$PROJECT_DIR$/Views/template/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Advert.php">
+    <entry file="file://$PROJECT_DIR$/Views/template/logout.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <marker date="1518095967057" expanded="true" signature="404:493" ph="INSERT INTO adverts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createadvert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="130" lean-forward="false" selection-start-line="0" selection-start-column="130" selection-end-line="0" selection-end-column="130" />
           <folding />
         </state>
       </provider>
@@ -673,6 +665,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Views/createadvert.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -681,10 +681,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="38" />
+          <folding>
+            <marker date="1517862309144" expanded="true" signature="471:524" ph="SELECT usern... users" />
+            <marker date="1517862309144" expanded="true" signature="1052:1175" ph="INSERT INTO users... " />
+            <marker date="1517862309144" expanded="true" signature="1839:1892" ph="SELECT passw... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Advert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <marker date="1518516508959" expanded="true" signature="404:507" ph="INSERT INTO adverts... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="187">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/adverts/12.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createadvert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
           <folding />
         </state>
       </provider>

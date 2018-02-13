@@ -21,14 +21,18 @@ class Advert
     }
 
     public function createAd($conn, $user, $title,$description,$price){
-        $stmt = $conn->prepare("INSERT INTO adverts (title,description,username) VALUES (:title, :description, :username)");
-        $stmt->bindParam('username', $this->username);
+        $stmt = $conn->prepare("INSERT INTO adverts (title,description,price,username) VALUES (:title, :description, :price, :username)");
+        $stmt->bindParam('username', $user);
         $stmt->bindParam('title', $title);
         $stmt->bindParam('description', $description);
+        $stmt->bindParam('price', $price);
         $result = $stmt->execute();
         if(!$result){
             return "Statement Failed: ". $stmt->errorInfo();
         }else {
+            $stmt = $conn->prepare("SELECT LAST_INSERT_ID()");
+            $stmt->execute();
+            $this->id = $stmt->fetchColumn();
             return "Success";
         }
     }

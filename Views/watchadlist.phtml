@@ -1,18 +1,15 @@
 <?php require('template/header.phtml') ?>
 
-<h3>Advert</h3>
-<?php if(isset($view->adtitle))echo "<p>".$view->adtitle."</p>";
-if(isset($view->desc))echo "<p>".$view->desc."</p>";
-if(isset($view->price))echo "<p>".$view->price."</p>";
-if(isset($view->aduser))echo "<p>".$view->aduser."</p>";
-if(isset($view->img)) foreach($view->img as $img) echo "<img src='".$img."'>";
-if(isset($view->watched)) {
-    if ($view->watched)
-        echo "<a href='advert.php?id=$view->id&w=0'> Un-watch </a>";
-    else
-        echo "<a href='advert.php?id=$view->id&w=1'> Watch </a>";
+<h3>Your watched adverts</h3>
+<ul>
+<?php if(isset($view->ads) ){
+    for ($i = 0; $i < $view->total; $i++) {
+        $view->curAd = $i;
+        require('template/thumbnail.phtml');
+    }
 }
 ?>
+</ul>
 <?php if(isset($view->status)) : ?>
     <div class="alert alert-<?php echo (isset($view->error) ? 'danger' : 'success'); ?>">
         <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>

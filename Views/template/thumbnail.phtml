@@ -1,0 +1,10 @@
+<div class="col-md-4">
+    <div class="thumbnail">
+        <a href="advert.php?id=<?php echo $view->ads[$view->curAd][0]; ?>">
+            <img src="<?php echo $view->img[$view->curAd]; ?>" alt="Ad" style="width:100%">
+            <div class="caption">
+                <p><?php echo $view->ads[$view->curAd][1].":£". $view->ads[$view->curAd][2]; ?></p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -65,4 +65,12 @@ class Advert
         }
         return "Success";
     }
+
+    public function getAds($conn){
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts");
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetchAll();
+    }
 }

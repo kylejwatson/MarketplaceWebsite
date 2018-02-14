@@ -73,4 +73,43 @@ class Advert
             return "Statement Failed: ". $stmt->errorInfo();
         return $stmt->fetchAll();
     }
+
+    public function getSavedAds($conn, $user){
+        $stmt = $conn->prepare("SELECT adverts.id, adverts.title, adverts.price FROM saved INNER JOIN adverts ON saved.id = adverts.id WHERE saved.username = :username");
+        $stmt->bindParam('username', $user);
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetchAll();
+    }
+
+    public function isWatched($conn, $user){
+        $stmt = $conn->prepare("SELECT id FROM saved WHERE id = :id AND username = :username");
+        $stmt->bindParam('username', $user);
+        $stmt->bindParam('id', $this->id);
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return count($stmt->fetchAll()) > 0;
+    }
+
+    public function watchAd($conn, $user){
+        $stmt = $conn->prepare("INSERT INTO saved (id,username) VALUES (:id, :username)");
+        $stmt->bindParam('username', $user);
+        $stmt->bindParam('id', $this->id);
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return "Success";
+    }
+
+    public function unwatchAd($conn, $user){
+        $stmt = $conn->prepare("DELETE FROM saved WHERE id = :id AND username = :username");
+        $stmt->bindParam('username', $user);
+        $stmt->bindParam('id', $this->id);
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return "Success";
+    }
 }

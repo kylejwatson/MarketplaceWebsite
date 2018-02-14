@@ -4,9 +4,9 @@
 <form action="" method="post">
     <div>
         <label>Email: </label>
-        <input type="text"  name="username" value=""/>
+        <input type="email"  name="username" value="" required/>
         <label>Password: </label>
-        <input type="text"  name="password" value=""/>
+        <input type="password"  name="password" value="" required/>
         <label>Address line 1: </label>
         <input type="text"  name="address1" value=""/>
         <label>Address line 2: </label>
@@ -15,8 +15,8 @@
         <input type="text"  name="mobile" value=""/>
         <img src="/image.php">
         <label>Enter the text in the image: </label>
-        <input type="text"  name="captcha" value=""/>
-        <input class="btn" type="submit" value="Register" name="submit" />
+        <input type="text"  name="captcha" value="" required/>
+        <input id="submit-btn" class="btn" type="submit" value="Register" name="submit" />
     </div>
 </form>
 <?php if(isset($view->status)) : ?>

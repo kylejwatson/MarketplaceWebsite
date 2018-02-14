@@ -17,7 +17,8 @@ if(isset($_POST['submit'])) {
     $server = new DBConnection();
     $conn = $server->connect();
     $ad = new Advert('');
-    $adSuccess = $ad->createAd($conn,$view->user,$_POST['title'],$_POST['desc'],$_POST['price'],$_FILES["fileToUpload"]);
+
+    $adSuccess = $ad->createAd($conn,$view->user,$_POST['title'],$_POST['desc'],$_POST['price'],isset($_POST['digital']),$_FILES["fileToUpload"]);
     if($adSuccess) {
         $_GET["id"] = $ad->id;
         require_once("advert.php");

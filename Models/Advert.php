@@ -20,12 +20,34 @@ class Advert
         $this->id = $id;
     }
 
-    public function createAd($conn, $user, $title,$description,$price,$list){
-        $stmt = $conn->prepare("INSERT INTO adverts (title,description,price,username) VALUES (:title, :description, :price, :username)");
+    public function expireAds($conn){
+        $stmt = $conn->prepare("DELETE FROM adverts WHERE (SELECT DATEDIFF(expire,CURDATE())) > 60");
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return "Success";
+    }
+
+    public function searchAds($conn, $args,$dig){
+        $in  = str_repeat('?,', count($dig) - 1) . '?';
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE title LIKE ? AND description LIKE ? AND price <= ? AND price >= ? AND digital IN ($in)");
+        $args[0] = "%".$args[0]."%";
+        $args[1] = "%".$args[1]."%";
+        $args[2] = ($args[2] === '' ? 99999 : $args[2]);
+        $args[3] = ($args[3] === '' ? 0 : $args[3]);
+        $result = $stmt->execute(array_merge($args,$dig));
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetchAll();
+    }
+
+    public function createAd($conn, $user, $title,$description,$price,$digital,$list){
+        $stmt = $conn->prepare("INSERT INTO adverts (title,description,price,username,digital,expire) VALUES (:title, :description, :price, :username, :digital, (SELECT ADDDATE(CURDATE(),60)))");
         $stmt->bindParam('username', $user);
         $stmt->bindParam('title', $title);
         $stmt->bindParam('description', $description);
         $stmt->bindParam('price', $price);
+        $stmt->bindValue('digital', ($digital ? 1 : 0));
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();
@@ -36,7 +58,7 @@ class Advert
     }
 
     public function getDetails($conn){
-        $stmt = $conn->prepare("SELECT title, description, price, username FROM adverts WHERE id = :id");
+        $stmt = $conn->prepare("SELECT title, description, price, username, digital FROM adverts WHERE id = :id");
         $stmt->bindParam('id', $this->id);
         $result = $stmt->execute();
         if(!$result)

@@ -15,14 +15,16 @@ $view->pageTitle = 'Advert';
 require_once('Models/DBConnection.php');
 $server = new DBConnection();
 $conn = $server->connect();
+$ad->expireAds($conn);
 $details = $ad->getDetails($conn);
 if(is_string($details))
     $view->status = $details;
 else{
-    $view->adtitle = $details[0];
-    $view->desc = $details[1];
-    $view->price = $details[2];
-    $view->aduser = $details[3];
+    $view->adtitle = $details['title'];
+    $view->desc = $details['description'];
+    $view->price = $details['price'];
+    $view->aduser = $details['username'];
+    $view->digital = $details['digital'];
     $view->id = $ad->id;
     $view->img = array();
     $imgPath = "images/adverts/" . $ad->id . "_*.*";

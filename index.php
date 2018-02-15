@@ -10,8 +10,7 @@ $view->pageTitle = 'Adverts';
 
 require_once('Models/Advert.php');
 require_once('Models/DBConnection.php');
-$server = new DBConnection();
-$conn = $server->connect();
+$conn = DBConnection::Instance();
 $ad = new Advert('');
 $adSuccess = $ad->getAds($conn);
 if(is_string($adSuccess)) {

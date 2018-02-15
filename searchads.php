@@ -10,8 +10,7 @@ $view->pageTitle = 'Search Adverts';
 if(isset($_POST['submit'])) {
     require_once('Models/Advert.php');
     require_once('Models/DBConnection.php');
-    $server = new DBConnection();
-    $conn = $server->connect();
+    $conn = DBConnection::Instance();
     $ad = new Advert('');
     $dig = array(0,1);
     $d = isset($_POST['digital']);

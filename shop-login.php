@@ -10,8 +10,7 @@ if(isset($_SESSION["user"]))
 if(isset($_POST['submit'])){
     require_once('Models/User.php');
     require_once('Models/DBConnection.php');
-    $server = new DBConnection();
-    $conn = $server->connect();
+    $conn = DBConnection::Instance();
     $user = new User($_POST['username']);
     if($user->login($conn, $_POST['password'])){
         $view->status = "Logged In Successfully";

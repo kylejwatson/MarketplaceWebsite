@@ -14,8 +14,7 @@ $view->pageTitle = 'Create Advert';
 if(isset($_POST['submit'])) {
     require_once('Models/Advert.php');
     require_once('Models/DBConnection.php');
-    $server = new DBConnection();
-    $conn = $server->connect();
+    $conn = DBConnection::Instance();
     $ad = new Advert('');
 
     $adSuccess = $ad->createAd($conn,$view->user,$_POST['title'],$_POST['desc'],$_POST['price'],isset($_POST['digital']),$_FILES["fileToUpload"]);

@@ -13,8 +13,7 @@ else {
 }
 $view->pageTitle = 'Advert';
 require_once('Models/DBConnection.php');
-$server = new DBConnection();
-$conn = $server->connect();
+$conn = DBConnection::Instance();
 $ad->expireAds($conn);
 $details = $ad->getDetails($conn);
 if(is_string($details))

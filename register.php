@@ -11,8 +11,7 @@ if(isset($_POST['submit'])){
     if($_POST['captcha'] === $_SESSION["captcha"]) {
         session_unset();
         session_destroy();
-        $server = new DBConnection();
-        $conn = $server->connect();
+        $conn = DBConnection::Instance();
         $user = new User($_POST['username']);
         $result = $user->createUser($conn, $_POST['password'], $_POST['address1'], $_POST['address2'], $_POST['mobile']);
         if ($result == "Success") {

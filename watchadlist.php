@@ -13,8 +13,7 @@ $view->pageTitle = 'Watched List';
 
 require_once('Models/Advert.php');
 require_once('Models/DBConnection.php');
-$server = new DBConnection();
-$conn = $server->connect();
+$conn = DBConnection::Instance();
 $ad = new Advert('');
 $adSuccess = $ad->getSavedAds($conn,$view->user);
 if(is_string($adSuccess)) {

@@ -1,14 +1,13 @@
 <?php require('template/header.phtml') ?>
 
 <h3>Your watched adverts</h3>
-<ul>
 <?php if(isset($view->ads) ){
+    $view->watch = true;
     for ($i = 0; $i < $view->total; $i++) {
         $view->curAd = $i;
         require('template/thumbnail.phtml');
     }
 }
 ?>
-</ul>
 <?php require('template/footer.phtml'); ?>
 

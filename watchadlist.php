@@ -17,14 +17,19 @@ require_once('Models/Advert.php');
 require_once('Models/DBConnection.php');
 $conn = DBConnection::Instance();
 $ad = new Advert('');
+if (isset($_GET['w']) && isset($_GET['id'])) {
+    $ad->id = $_GET['id'];
+    $ad->setWatched($conn, $view->user, $_GET['w']);
+}
+
 //Retrieve list of saved ads
 $adSuccess = $ad->getSavedAds($conn,$view->user);
 if(count($adSuccess) !== 0) {
     $view->ads = $adSuccess;
     $view->img = array();
     //Get first image for each ad
-    foreach($view->ads as $ad){
-        $imgPath = "images/adverts/$ad[0]_0.*";
+    foreach($view->ads as $advert){
+        $imgPath = "images/adverts/$advert[0]_0.*";
         $result = glob($imgPath);
         if(count($result)>0)
             array_push($view->img, glob($imgPath)[0]);

@@ -40,25 +40,13 @@ if(!$details || is_string($details)) {
 
 //Checks if user is logged in
 if(isset($_SESSION["user"])) {
+
     $view->user = $_SESSION["user"];
-    //Check if ad is watched by user
-    $view->watched = $ad->isWatched($conn,$view->user);
-    //Check if user is trying to watch or unwatch an ad (clicking watch button)
-    if (isset($_GET['w'])) {
-        //Add ad to users watchlist if it isnt already
-        if(!$view->watched && $_GET['w'] === '1'){
-            $result = $ad->watchAd($conn,$view->user);
-            if($result === "Success")
-                $view->watched = true;
-
-        //Remove from users watchlist if its there
-        }elseif($view->watched && $_GET['w'] === '0'){
-            $result = $ad->unwatchAd($conn,$view->user);
-            if($result === "Success")
-                $view->watched = false;
-
-        }
-    }
+    //Watch or unwatch add if user has clicked button, check if its watched to display right button
+    if (isset($_GET['w']))
+        $view->watched = $ad->setWatched($conn,$view->user,$_GET['w']);
+    else
+        $view->watched = $ad->isWatched($conn, $view->user);
 }
 
 //Load page view

@@ -198,4 +198,25 @@ class Advert
             return "Statement Failed: ". $stmt->errorInfo();
         return "Success";
     }
+
+    /**
+     * Toggles if ad is watched
+     * @param PDO $conn
+     * @param string $user
+     * @param string $w
+     * @return bool|string
+     */
+    public function setWatched($conn, $user, $w){
+        $watched = $this->isWatched($conn, $user);
+        if(!$watched && $w === '1'){
+            $result = $this->watchAd($conn,$user);
+            if($result === "Success")
+                return true;
+        }elseif($watched && $w === '0'){
+            $result = $this->unwatchAd($conn,$user);
+            if($result === "Success")
+                return false;
+        }
+        return $watched;
+    }
 }

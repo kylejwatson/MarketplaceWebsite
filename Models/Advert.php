@@ -30,7 +30,7 @@ class Advert
 
     public function searchAds($conn, $args,$dig){
         $in  = str_repeat('?,', count($dig) - 1) . '?';
-        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE title LIKE ? AND description LIKE ? AND price <= ? AND price >= ? AND digital IN ($in)");
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE ? OR description LIKE ?) AND price <= ? AND price >= ? AND digital IN ($in)");
         $args[0] = "%".$args[0]."%";
         $args[1] = "%".$args[1]."%";
         $args[2] = ($args[2] === '' ? 99999 : $args[2]);

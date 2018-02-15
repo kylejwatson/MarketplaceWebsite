@@ -24,7 +24,13 @@ if(isset($_POST['submit'])) {
         else
             $dig = array(0);
     }
-    $adSuccess = $ad->searchAds($conn,array($_POST['title'],$_POST['desc'],$_POST['maxprice'],$_POST['minprice']),$dig);
+    if(!isset($_POST['title']))
+        $_POST['title'] = '';
+    if(!isset($_POST['maxprice']))
+        $_POST['maxprice'] = 9999.99;
+    if(!isset($_POST['minprice']))
+        $_POST['minprice'] = 0;
+    $adSuccess = $ad->searchAds($conn,array($_POST['title'],$_POST['title'],$_POST['maxprice'],$_POST['minprice']),$dig);
     if (is_string($adSuccess)) {
         $view->status = $adSuccess;
     } else {

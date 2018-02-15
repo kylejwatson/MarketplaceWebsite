@@ -1,19 +1,51 @@
 <?php require('template/header.phtml') ?>
 
-<h3>Advert</h3>
-<?php if(isset($view->adtitle))echo "<p>".$view->adtitle."</p>";
-if(isset($view->desc))echo "<p>".$view->desc."</p>";
-if(isset($view->price))echo "<p>".$view->price."</p>";
-if(isset($view->aduser))echo "<p>".$view->aduser."</p>";
-if(isset($view->digital))echo "<p>".$view->digital."</p>";
-if(isset($view->img)) foreach($view->img as $img) echo "<img src='".$img."'>";
-if(isset($view->watched)) {
-    if ($view->watched)
-        echo "<a href='advert.php?id=$view->id&w=0'> Un-watch </a>";
-    else
-        echo "<a href='advert.php?id=$view->id&w=1'> Watch </a>";
-}
-?>
+<div class="row">
+    <div class="col-sm-6">
+        <?php if(isset($view->adtitle))echo "<h3>".$view->adtitle."</h3>"; ?>
+    </div>
+    <div class="col-sm-6">
+        <?php if(isset($view->price))echo "<h3>£".$view->price."</h3>"; ?>
+    </div>
+</div>
+
+<div class='panel panel-default'>
+    <div class='panel-heading'>Description</div>
+    <div class='panel-body'>
+        <div class="row">
+            <ul>
+            <?php if(isset($view->img)) foreach($view->img as $img): ?>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="<?php echo $img; ?>">
+                    </div>
+                </div>
+            <?php endforeach;?>
+            </ul>
+        </div>
+            <p><?php if(isset($view->desc))echo $view->desc; ?></p>
+    </div>
+    <div class="panel-footer">
+        <div class="row"><div class="col-sm-4">
+                <?php if(isset($view->watched)) {
+                    if ($view->watched)
+                        echo "<a class='btn btn-default' href='advert.php?id=$view->id&w=0'> Un-watch </a>";
+                    else
+                        echo "<a  class='btn btn-primary' href='advert.php?id=$view->id&w=1'> Watch </a>";
+                }?>
+            </div>
+            <div class="col-sm-4">User - <?php if(isset($view->aduser))echo $view->aduser;?></div>
+            <div class="col-sm-4">
+                <?php if(isset($view->digital)){
+                    if($view->digital === 1)
+                        echo "This piece is digital.";
+                    else
+                        echo "This piece is physical.";
+                } ?>
+            </div>
+        </div>
+    </div>
+</div>
 <?php if(isset($view->status)) : ?>
     <div class="alert alert-<?php echo (isset($view->error) ? 'danger' : 'success'); ?>">
         <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>

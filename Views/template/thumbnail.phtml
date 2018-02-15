@@ -3,7 +3,7 @@
         <a href="advert.php?id=<?php echo $view->ads[$view->curAd][0]; ?>">
             <img src="<?php echo $view->img[$view->curAd]; ?>" alt="Ad" style="width:100%">
             <div class="caption">
-                <p><?php echo $view->ads[$view->curAd][1].":£". $view->ads[$view->curAd][2]; ?></p>
+                <h4><?php echo $view->ads[$view->curAd][1]."</h4><h4>£". $view->ads[$view->curAd][2]; ?></h4>
                 <?php if(isset($view->watch)){
                     $id = $view->ads[$view->curAd][0];
                     echo "<a class='btn btn-default' href='watchadlist.php?id=$id&w=0'> Un-watch </a>";

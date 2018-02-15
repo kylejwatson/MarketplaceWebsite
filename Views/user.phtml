@@ -1,0 +1,21 @@
+<?php require('template/header.phtml') ?>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">
+        <h4 class="list-group-item-heading">Email:</h4>
+        <p class="list-group-item-text"> <?php echo $view->username; ?></p>
+    </li>
+    <li class="list-group-item">
+        <h4 class="list-group-item-heading">Address Line 1:</h4>
+        <p class="list-group-item-text"> <?php echo $view->address1; ?></p>
+    </li>
+    <li class="list-group-item">
+        <h4 class="list-group-item-heading">Address Line 2:</h4>
+        <p class="list-group-item-text"> <?php echo $view->address2; ?></p>
+    </li>
+    <li class="list-group-item">
+        <h4 class="list-group-item-heading">Mobile Phone Number:</h4>
+        <p class="list-group-item-text"> <?php echo $view->mobile; ?></p>
+    </li>
+</ul>
+<?php require('template/footer.phtml'); ?>
+

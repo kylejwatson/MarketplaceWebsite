@@ -22,6 +22,21 @@ class User
         $this->username = $username;
     }
 
+
+    /**
+     * Returns an array of details for the selected user
+     * @param PDO $conn
+     * @return array|string
+     */
+    public function getDetails($conn){
+        $stmt = $conn->prepare("SELECT username, address1, address2, mobile FROM users WHERE username = :username");
+        $stmt->bindParam('username', $this->username);
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetch();
+    }
+
     /**
      * Check if a user with the same username is already in the database
      * @param PDO $conn

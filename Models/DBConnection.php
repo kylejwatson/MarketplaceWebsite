@@ -9,15 +9,14 @@
 class DBConnection
 {
     /**
-     * User constructor.
-     * @param string $username
-     * @param string $password
+     * Instance getter for singleton
+     * @return PDO
      */
     public static function Instance(){
 
         $servername = "localhost";
         $username = "stc905";
-        $password = "turtlebrainholocaust";
+        $password = "turtlebrainholocaust"; //please dont steal this ;)
         $dbname = "stc905";
         static $inst = null;
         if($inst === null) {
@@ -33,6 +32,9 @@ class DBConnection
         return $inst;
     }
 
+    /**
+     * DBConnection constructor privated for singleton
+     */
     private function __construct()
     {
 

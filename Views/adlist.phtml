@@ -10,17 +10,5 @@
 }
 ?>
 </ul>
-<?php if(isset($view->status)) : ?>
-    <div class="alert alert-<?php echo (isset($view->error) ? 'danger' : 'success'); ?>">
-        <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
-        <div>
-            <?php echo $view->status; if(isset($view->error)): ?>
-                <div>
-                    <?php require('template/login.phtml'); ?>
-                </div>
-            <?php endif;?>
-        </div>
-    </div>
-<?php endif;
-require('template/footer.phtml'); ?>
+<?php require('template/footer.phtml'); ?>
 

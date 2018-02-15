@@ -8,18 +8,25 @@
 
 class Advert
 {
+    /**
+     * @var string
+     */
     var $id = '';
 
     /**
      * User constructor.
-     * @param string $username
-     * @param string $password
+     * @param string $id
      */
     public function __construct($id)
     {
         $this->id = $id;
     }
 
+    /**
+     * Called in order to delete all ads past their expiry date
+     * @param PDO $conn
+     * @return string
+     */
     public function expireAds($conn){
         $stmt = $conn->prepare("DELETE FROM adverts WHERE (SELECT DATEDIFF(expire,CURDATE())) > 60");
         $result = $stmt->execute();
@@ -28,7 +35,14 @@ class Advert
         return "Success";
     }
 
-    public function searchAds($conn, $args,$dig){
+    /**
+     * Search through ads where the all filters match: keyword searches if the string matches in the title or description
+     * @param PDO $conn
+     * @param array $args
+     * @param array $dig
+     * @return string|array
+     */
+    public function searchAds($conn, $args, $dig){
         $in  = str_repeat('?,', count($dig) - 1) . '?';
         $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE ? OR description LIKE ?) AND price <= ? AND price >= ? AND digital IN ($in)");
         $args[0] = "%".$args[0]."%";
@@ -41,7 +55,18 @@ class Advert
         return $stmt->fetchAll();
     }
 
-    public function createAd($conn, $user, $title,$description,$price,$digital,$list){
+    /**
+     * Adds a new add to database and sets expiry date to 60 days from today
+     * @param PDO $conn
+     * @param string $user
+     * @param string $title
+     * @param string $description
+     * @param string $price
+     * @param bool $digital
+     * @param array $list
+     * @return string
+     */
+    public function createAd($conn, $user, $title, $description, $price, $digital, $list){
         $stmt = $conn->prepare("INSERT INTO adverts (title,description,price,username,digital,expire) VALUES (:title, :description, :price, :username, :digital, (SELECT ADDDATE(CURDATE(),60)))");
         $stmt->bindParam('username', $user);
         $stmt->bindParam('title', $title);
@@ -57,6 +82,11 @@ class Advert
         return $this->uploadImages($list);
     }
 
+    /**
+     * Returns an array of details for the selected ad
+     * @param PDO $conn
+     * @return array|string
+     */
     public function getDetails($conn){
         $stmt = $conn->prepare("SELECT title, description, price, username, digital FROM adverts WHERE id = :id");
         $stmt->bindParam('id', $this->id);
@@ -66,6 +96,11 @@ class Advert
         return $stmt->fetch();
     }
 
+    /**
+     * Upload each image to the file server with names corresponding to the advert ID
+     * @param array $list
+     * @return string
+     */
     private function uploadImages($list){
         $target_dir = "images/adverts/";
         $target_file_id = $target_dir . $this->id . "_";
@@ -88,6 +123,11 @@ class Advert
         return "Success";
     }
 
+    /**
+     * Gets every ad in the database
+     * @param PDO $conn
+     * @return string|array
+     */
     public function getAds($conn){
         $stmt = $conn->prepare("SELECT id, title, price FROM adverts");
         $result = $stmt->execute();
@@ -96,6 +136,12 @@ class Advert
         return $stmt->fetchAll();
     }
 
+    /**
+     * Returns all ads on the users watch list including details needed to list them
+     * @param PDO $conn
+     * @param string $user
+     * @return string|array
+     */
     public function getSavedAds($conn, $user){
         $stmt = $conn->prepare("SELECT adverts.id, adverts.title, adverts.price FROM saved INNER JOIN adverts ON saved.id = adverts.id WHERE saved.username = :username");
         $stmt->bindParam('username', $user);
@@ -105,6 +151,12 @@ class Advert
         return $stmt->fetchAll();
     }
 
+    /**
+     * Checks if selected ad is on users watch list
+     * @param PDO $conn
+     * @param string $user
+     * @return bool|string
+     */
     public function isWatched($conn, $user){
         $stmt = $conn->prepare("SELECT id FROM saved WHERE id = :id AND username = :username");
         $stmt->bindParam('username', $user);
@@ -115,6 +167,12 @@ class Advert
         return count($stmt->fetchAll()) > 0;
     }
 
+    /**
+     * Adds ad to users watch list
+     * @param PDO $conn
+     * @param string $user
+     * @return string
+     */
     public function watchAd($conn, $user){
         $stmt = $conn->prepare("INSERT INTO saved (id,username) VALUES (:id, :username)");
         $stmt->bindParam('username', $user);
@@ -125,6 +183,12 @@ class Advert
         return "Success";
     }
 
+    /**
+     * Removes ad from users watch list
+     * @param PDO $conn
+     * @param string $user
+     * @return string
+     */
     public function unwatchAd($conn, $user){
         $stmt = $conn->prepare("DELETE FROM saved WHERE id = :id AND username = :username");
         $stmt->bindParam('username', $user);

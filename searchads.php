@@ -1,5 +1,6 @@
 <?php
 
+//Start session if it hasn't already started (redirects)
 $view = new stdClass();
 if(session_status() == 1)
     session_start();
@@ -12,9 +13,11 @@ if(isset($_POST['submit'])) {
     require_once('Models/DBConnection.php');
     $conn = DBConnection::Instance();
     $ad = new Advert('');
+    //Create an array for checkboxes if details have been submitted
     $dig = array(0,1);
     $d = isset($_POST['digital']);
     $n = isset($_POST['notdigital']);
+    //Check for real and digital if both or none have been selected
     if($d)
         $dig = array(1);
     if($n){
@@ -23,18 +26,19 @@ if(isset($_POST['submit'])) {
         else
             $dig = array(0);
     }
+    //Set defaults if filters havent been entered
     if(!isset($_POST['title']))
         $_POST['title'] = '';
     if(!isset($_POST['maxprice']))
         $_POST['maxprice'] = 9999.99;
     if(!isset($_POST['minprice']))
         $_POST['minprice'] = 0;
+    //Fetch every matching adverts imediate details
     $adSuccess = $ad->searchAds($conn,array($_POST['title'],$_POST['title'],$_POST['maxprice'],$_POST['minprice']),$dig);
-    if (is_string($adSuccess)) {
-        $view->status = $adSuccess;
-    } else {
+    if(count($adSuccess) !== 0) {
         $view->ads = $adSuccess;
         $view->img = array();
+        //Get first image for each ad and add to array
         foreach ($view->ads as $ad) {
             $imgPath = "images/adverts/$ad[0]_0.*";
             $result = glob($imgPath);
@@ -47,5 +51,5 @@ if(isset($_POST['submit'])) {
     }
 }
 
-//show edit user page
+//showpage view
 require_once('Views/searchads.phtml');

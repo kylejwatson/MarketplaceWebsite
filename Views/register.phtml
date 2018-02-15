@@ -48,15 +48,9 @@
     </div>
 </form>
 <?php if(isset($view->status)) : ?>
-    <div class="alert alert-<?php echo (isset($view->error) ? 'danger' : 'success'); ?>">
+    <div class="alert alert-<?php echo (isset($view->error) ? 'success' : 'danger'); ?>">
         <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
-        <div>
-            <?php echo $view->status; if(isset($view->error)): ?>
-                <div>
-                    <?php require('template/login.phtml'); ?>
-                </div>
-            <?php endif;?>
-        </div>
+        <?php echo $view->status; if(isset($view->error)) require('template/login.phtml'); ?>
     </div>
 <?php endif;
 require('template/footer.phtml'); ?>

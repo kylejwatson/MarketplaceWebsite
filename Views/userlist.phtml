@@ -1,0 +1,13 @@
+<?php require('template/header.phtml') ?>
+
+<h3>All Registered Users</h3>
+<ul class="list-group">
+<?php if(isset($view->users) ){
+    foreach ($view->users as $user) {
+        echo "<a href='user.php?id=$user[0]' class='list-group-item'>$user[0]</a>";
+    }
+}
+?>
+</ul>
+<?php require('template/footer.phtml'); ?>
+

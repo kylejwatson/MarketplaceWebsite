@@ -24,6 +24,20 @@ class User
 
 
     /**
+     * Gets every user in the database
+     * @param PDO $conn
+     * @return string|array
+     */
+    public function getUsers($conn){
+        $stmt = $conn->prepare("SELECT username FROM users");
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetchAll();
+    }
+
+
+    /**
      * Returns an array of details for the selected user
      * @param PDO $conn
      * @return array|string

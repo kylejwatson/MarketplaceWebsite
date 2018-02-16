@@ -5,5 +5,9 @@
         <li><a href="createadvert.php">Sell a new peice</a></li>
         <li><a href="watchadlist.php">View watch list</a></li>
         <li><a href="logout.php">Logout</a></li>
+        <?php if($view->user === "admin@admin"): ?>
+            <p class="navbar-text"><span class="label label-info">Admin <span class="glyphicon glyphicon-wrench"></span></span></p>
+        <li><a href="userlist.php">Registered Users</a></li>
+        <?php endif; ?>
     </ul>
 </li>

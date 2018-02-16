@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b0c971-f0dd-4621-8cf4-98b4b13b3b64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Advert.php" afterPath="$PROJECT_DIR$/Models/Advert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/User.php" afterPath="$PROJECT_DIR$/Models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/advert.phtml" afterPath="$PROJECT_DIR$/Views/advert.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/user.phtml" afterPath="$PROJECT_DIR$/Views/user.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/userlist.phtml" afterPath="$PROJECT_DIR$/Views/userlist.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/advert.php" afterPath="$PROJECT_DIR$/advert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userlist.php" afterPath="$PROJECT_DIR$/userlist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/DBConnection.php" afterPath="$PROJECT_DIR$/Models/DBConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/adlist.phtml" afterPath="$PROJECT_DIR$/Views/adlist.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/register.phtml" afterPath="$PROJECT_DIR$/Views/register.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adlist.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adlist.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -63,14 +58,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/user.phtml">
+      <file leaf-file-name="DBConnection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/DBConnection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="50" column="128" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="128" />
-              <folding>
-                <marker date="1518743808652" expanded="true" signature="2724:2749" ph="..." />
-              </folding>
+            <state relative-caret-position="79">
+              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,16 +73,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
               <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createadvert.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createadvert.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -118,8 +101,8 @@
       <file leaf-file-name="Advert.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/Advert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+            <state relative-caret-position="328">
+              <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
               <folding>
                 <marker date="1518746827998" expanded="true" signature="494:560" ph="DELETE FROM " />
                 <marker date="1518746827998" expanded="true" signature="500:520" ph="DELETE FROM " />
@@ -142,6 +125,16 @@
                 <marker date="1518746827998" expanded="true" signature="8077:8132" ph="INSERT INTO adverts... " />
                 <marker date="1518746827998" expanded="true" signature="8581:8638" ph="DELETE FROM " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/register.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,14 +178,11 @@
         <option value="$PROJECT_DIR$/Views/shop-login.phtml" />
         <option value="$PROJECT_DIR$/css/my-style.css" />
         <option value="$PROJECT_DIR$/Views/createadvert.phtml" />
-        <option value="$PROJECT_DIR$/Models/DBConnection.php" />
         <option value="$PROJECT_DIR$/image.php" />
         <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/Views/register.phtml" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/shop-login.php" />
         <option value="$PROJECT_DIR$/searchads.php" />
-        <option value="$PROJECT_DIR$/Views/adlist.phtml" />
         <option value="$PROJECT_DIR$/createadvert.php" />
         <option value="$PROJECT_DIR$/watchadlist.php" />
         <option value="$PROJECT_DIR$/Views/watchadlist.phtml" />
@@ -208,6 +198,9 @@
         <option value="$PROJECT_DIR$/Views/advert.phtml" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Models/Advert.php" />
+        <option value="$PROJECT_DIR$/Views/adlist.phtml" />
+        <option value="$PROJECT_DIR$/Models/DBConnection.php" />
+        <option value="$PROJECT_DIR$/Views/register.phtml" />
       </list>
     </option>
   </component>
@@ -400,12 +393,12 @@
       <workItem from="1517855863480" duration="6263000" />
       <workItem from="1518091805862" duration="8191000" />
       <workItem from="1518565409223" duration="47988000" />
-      <workItem from="1518726686893" duration="20304000" />
+      <workItem from="1518726686893" duration="21721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126540000" />
+    <option name="totallyTimeSpent" value="127957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -583,14 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/DBConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="71" lean-forward="false" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop-login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -667,14 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="37" column="65" lean-forward="false" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/register.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="54" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -781,10 +758,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/DBConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/Advert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+        <state relative-caret-position="328">
+          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
           <folding>
             <marker date="1518746827998" expanded="true" signature="494:560" ph="DELETE FROM " />
             <marker date="1518746827998" expanded="true" signature="500:520" ph="DELETE FROM " />
@@ -810,26 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Views/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="141">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
           <folding />
         </state>
       </provider>

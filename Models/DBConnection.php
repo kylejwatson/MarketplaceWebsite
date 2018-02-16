@@ -14,7 +14,7 @@ class DBConnection
      */
     public static function Instance(){
 
-        $servername = "localhost";
+        $servername = "helios.csesalford.com";
         $username = "stc905";
         $password = "turtlebrainholocaust"; //please dont steal this ;)
         $dbname = "stc905";

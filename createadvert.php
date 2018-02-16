@@ -13,7 +13,6 @@ else{
     die();
 }
 $view->pageTitle = 'Create Advert';
-
 if(isset($_POST['submit'])) {
     require_once('Models/Advert.php');
     require_once('Models/DBConnection.php');

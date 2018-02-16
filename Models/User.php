@@ -43,6 +43,12 @@ class User
      * @return array|string
      */
     public function getDetails($conn){
+        if(strlen($this->username)>100)
+            return "Username too long, must be less than 100 characters";
+        $newUsername = strip_tags($this->username);
+        if($newUsername !== $this->username)
+            return "No special characters allowed in username";
+
         $stmt = $conn->prepare("SELECT username, address1, address2, mobile FROM users WHERE username = :username");
         $stmt->bindParam('username', $this->username);
         $result = $stmt->execute();
@@ -57,6 +63,12 @@ class User
      * @return string
      */
     public function checkUserExists($conn){
+        if(strlen($this->username)>100)
+            return "Username too long, must be less than 100 characters";
+        $newUsername = strip_tags($this->username);
+        if($newUsername !== $this->username)
+            return "No special characters allowed in username";
+
         if($this->username == "")
             return "Invalid username";
         $stmt = $conn->prepare("SELECT username FROM users WHERE username = :username");
@@ -81,6 +93,27 @@ class User
      * @return string
      */
     public function createUser($conn, $password, $address1, $address2, $mobile){
+        if(strlen($this->username)>100)
+            return "Username too long, must be less than 100 characters";
+        $newUsername = strip_tags($this->username);
+        if($newUsername !== $this->username)
+            return "No special characters allowed in username";
+        if(strlen($address1)>254)
+            return "Address too long, must be less than 254 characters";
+        $newAddress = strip_tags($address1);
+        if($newAddress !== $address1)
+            return "No special characters allowed in address";
+        if(strlen($address2)>254)
+            return "Address too long, must be less than 254 characters";
+        $newAddress = strip_tags($address2);
+        if($newAddress !== $address2)
+            return "No special characters allowed in address";
+        if(strlen($mobile)>12)
+            return "Mobile too long, must be less than 12 characters";
+        $newMobile = strip_tags($mobile);
+        if($newMobile !== $mobile)
+            return "No special characters allowed in mobile";
+
         $userExists = $this->checkUserExists($conn);
         if($userExists == "NA") {
             $stmt = $conn->prepare("INSERT INTO users (username,password,address1,address2,mobile) VALUES (:username, :password, :address1, :address2, :mobile)");
@@ -110,6 +143,26 @@ class User
      * @return string
      */
     public function editUser($conn, $password, $address1, $address2, $mobile){
+        if(strlen($this->username)>100)
+            return "Username too long, must be less than 100 characters";
+        $newUsername = strip_tags($this->username);
+        if($newUsername !== $this->username)
+            return "No special characters allowed in username";
+        if(strlen($address1)>254)
+            return "Address too long, must be less than 254 characters";
+        $newAddress = strip_tags($address1);
+        if($newAddress !== $address1)
+            return "No special characters allowed in address";
+        if(strlen($address2)>254)
+            return "Address too long, must be less than 254 characters";
+        $newAddress = strip_tags($address2);
+        if($newAddress !== $address2)
+            return "No special characters allowed in address";
+        if(strlen($mobile)>12)
+            return "Mobile too long, must be less than 12 characters";
+        $newMobile = strip_tags($mobile);
+        if($newMobile !== $mobile)
+            return "No special characters allowed in mobile";
         $stmt = $conn->prepare("UPDATE users SET password=:password,address1=:address1,address2=:address2,mobile=:mobile WHERE username=:username");
         $stmt->bindParam('username', $this->username);
         $hashedPass = password_hash($password, PASSWORD_DEFAULT);
@@ -129,6 +182,11 @@ class User
      * @return string
      */
     public function deleteUser($conn){
+        if(strlen($this->username)>100)
+            return "Username too long, must be less than 100 characters";
+        $newUsername = strip_tags($this->username);
+        if($newUsername !== $this->username)
+            return "No special characters allowed in username";
         $stmt = $conn->prepare("DELETE FROM users WHERE username=:username");
         $stmt->bindParam('username', $this->username);
         $result = $stmt->execute();
@@ -145,6 +203,12 @@ class User
      * @return bool|string
      */
     public function login($conn, $password){
+        if(strlen($this->username)>100)
+            return false;
+        $newUsername = strip_tags($this->username);
+        if($newUsername != $this->username)
+            return false;
+
         $stmt = $conn->prepare("SELECT password FROM users WHERE username = :username");
         $stmt->bindParam(':username', $this->username);
         $stmt->execute();

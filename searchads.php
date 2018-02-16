@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
         $_POST['minprice'] = 0;
     //Fetch every matching adverts imediate details
     $adSuccess = $ad->searchAds($conn,array($_POST['title'],$_POST['title'],$_POST['maxprice'],$_POST['minprice']),$dig);
-    if(count($adSuccess) !== 0) {
+    if(count($adSuccess) !== 0 &! is_string($adSuccess)) {
         $view->ads = $adSuccess;
         $view->img = array();
         //Get first image for each ad and add to array

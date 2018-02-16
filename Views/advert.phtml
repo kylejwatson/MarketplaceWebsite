@@ -30,7 +30,7 @@
                 <?php endforeach;?>
             </ul>
         </div>
-        <p><?php if(isset($view->desc))echo $view->desc; ?></p>
+        <p><?php if(isset($view->desc))echo nl2br($view->desc); ?></p>
     </div>
     <div class="panel-footer">
         <?php if(isset($view->watched)): ?>

@@ -43,6 +43,18 @@ class Advert
      * @return string|array
      */
     public function searchAds($conn, $args, $dig){
+        $newAd = strip_tags($args[0]);
+        if($newAd !== $args[0])
+            return "No special characters allowed in title";
+        $newAd = strip_tags($args[1]);
+        if($newAd !== $args[1])
+            return "No special characters allowed in description";
+        $newAd = strip_tags($args[3]);
+        if($newAd !== $args[3])
+            return "No special characters allowed in max price";
+        $newAd = strip_tags($args[3]);
+        if($newAd !== $args[3])
+            return "No special characters allowed in min price";
         $in  = str_repeat('?,', count($dig) - 1) . '?';
         $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE ? OR description LIKE ?) AND price <= ? AND price >= ? AND digital IN ($in)");
         $args[0] = "%".$args[0]."%";
@@ -67,6 +79,21 @@ class Advert
      * @return string
      */
     public function createAd($conn, $user, $title, $description, $price, $digital, $list){
+        if(strlen($title)>45)
+            return "Title must be less than 45 characters";
+        if(strip_tags($title) !== $title)
+            return "No special characters allowed in title";
+        if(strlen($description)>254)
+            return "Description must be less than 254 characters";
+        if(strip_tags($description) !== $description)
+            return "No special characters allowed in description";
+        if(!is_numeric($price))
+            return "Price must be a number";
+        if(floatval($price)<0)
+            return "Price cannot be less than £0";
+        if(floatval($price)>9999.99)
+            return "Price cannot be more than £9999.99";
+
         $stmt = $conn->prepare("INSERT INTO adverts (title,description,price,username,digital,expire) VALUES (:title, :description, :price, :username, :digital, (SELECT ADDDATE(CURDATE(),60)))");
         $stmt->bindParam('username', $user);
         $stmt->bindParam('title', $title);
@@ -120,6 +147,20 @@ class Advert
      * @return string
      */
     public function editAd($conn, $title, $description, $price, $digital){
+        if(strlen($title)>45)
+            return "Title must be less than 45 characters";
+        if(strip_tags($title) !== $title)
+            return "No special characters allowed in title";
+        if(strlen($description)>254)
+            return "Description must be less than 254 characters";
+        if(strip_tags($description) !== $description)
+            return "No special characters allowed in description";
+        if(!is_numeric($price))
+            return "Price must be a number";
+        if(floatval($price)<0)
+            return "Price cannot be less than £0";
+        if(floatval($price)>9999.99)
+            return "Price cannot be more than £9999.99";
         $stmt = $conn->prepare("UPDATE adverts SET title=:title,description=:description,price=:price,digital=:digital,expire = (SELECT ADDDATE(CURDATE(),60)) WHERE id=:id");
         $stmt->bindParam('id', $this->id);
         $stmt->bindParam('title', $title);

@@ -2,12 +2,13 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello <?php echo $view->user; ?>
         <span class="caret"></span></a>
     <ul class="dropdown-menu">
-        <li><a href="createadvert.php">Sell a new peice</a></li>
-        <li><a href="watchadlist.php">View watch list</a></li>
+        <li><a href="createadvert.php">Sell A New Peice</a></li>
+        <li><a href="watchadlist.php">View Watch List</a></li>
         <li><a href="logout.php">Logout</a></li>
         <?php if($view->user === "admin@admin"): ?>
             <p class="navbar-text"><span class="label label-info">Admin <span class="glyphicon glyphicon-wrench"></span></span></p>
-        <li><a href="userlist.php">Registered Users</a></li>
+            <li><a href="userlist.php">Registered Users</a></li>
+            <li><a href="expire.php">Delete Expired Ads</a></li>
         <?php endif; ?>
     </ul>
 </li>

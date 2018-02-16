@@ -1,4 +1,5 @@
 <?php
+ob_end_flush();
 //Output formatted as image data so can be loaded as a source for an image
 header("Content-type: image/png");
 

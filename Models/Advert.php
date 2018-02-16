@@ -81,6 +81,56 @@ class Advert
         $this->id = $stmt->fetchColumn();
         return $this->uploadImages($list);
     }
+    /**
+     * Delete ad from the database
+     * @param PDO $conn
+     * @param string $username
+     * @return string
+     */
+    public function deleteAd($conn, $username){
+        if($username === "admin@admin") {
+            $stmt = $conn->prepare("DELETE FROM adverts WHERE id=:id");
+            $stmt->bindParam('id', $this->id);
+            $result = $stmt->execute();
+            if (!$result) {
+                return "Statement Failed: " . $stmt->errorInfo();
+            }
+            return "Success";
+        }else{
+            $stmt = $conn->prepare("DELETE FROM adverts WHERE id=:id AND username=:username");
+            $stmt->bindParam('id', $this->id);
+            $stmt->bindParam('username', $username);
+            $result = $stmt->execute();
+            if (!$result) {
+                return "Statement Failed: " . $stmt->errorInfo();
+            }
+            return "Success";
+        }
+        return "Unauthorised";
+    }
+    /**
+     * Edits ad details in the database and sets expiry date to 60 days from today
+     * @param PDO $conn
+     * @param string $user
+     * @param string $title
+     * @param string $description
+     * @param string $price
+     * @param bool $digital
+     * @param array $list
+     * @return string
+     */
+    public function editAd($conn, $title, $description, $price, $digital){
+        $stmt = $conn->prepare("UPDATE adverts SET title=:title,description=:description,price=:price,digital=:digital,expire = (SELECT ADDDATE(CURDATE(),60)) WHERE id=:id");
+        $stmt->bindParam('id', $this->id);
+        $stmt->bindParam('title', $title);
+        $stmt->bindParam('description', $description);
+        $stmt->bindParam('price', $price);
+        $stmt->bindValue('digital', ($digital ? 1 : 0));
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return "Success";
+    }
 
     /**
      * Returns an array of details for the selected ad

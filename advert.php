@@ -15,6 +15,7 @@ else {
 }
 require_once('Models/DBConnection.php');
 $conn = DBConnection::Instance();
+
 //Attempt to get details of ad
 $details = $ad->getDetails($conn);
 //Redirect if retrieval fails
@@ -42,12 +43,26 @@ if(!$details || is_string($details)) {
 if(isset($_SESSION["user"])) {
 
     $view->user = $_SESSION["user"];
+    if(isset($_POST['submit']) && ($view->user === "admin@admin" || $view->user === $view->aduser)){
+        $conn = DBConnection::Instance();
+        //Add new user to database
+        $result = $ad->editAd($conn,$_POST['title'],$_POST['desc'],$_POST['price'],isset($_POST['digital']));
+        if ($result != "Success") {
+            $view->status = $result;
+        }else{
+            $view->adtitle = $_POST['title'];
+            $view->desc = $_POST['desc'];
+            $view->price = $_POST['price'];
+            $view->digital = (isset($_POST['digital']) ? '1' : '0');
+        }
+    }
     //Watch or unwatch add if user has clicked button, check if its watched to display right button
     if (isset($_GET['w']))
         $view->watched = $ad->setWatched($conn,$view->user,$_GET['w']);
     else
         $view->watched = $ad->isWatched($conn, $view->user);
 }
+
 
 //Load page view
 require_once('Views/advert.phtml');

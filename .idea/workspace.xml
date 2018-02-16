@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b0c971-f0dd-4621-8cf4-98b4b13b3b64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Advert.php" afterPath="$PROJECT_DIR$/Models/Advert.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/User.php" afterPath="$PROJECT_DIR$/Models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/advert.phtml" afterPath="$PROJECT_DIR$/Views/advert.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/user.phtml" afterPath="$PROJECT_DIR$/Views/user.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/userlist.phtml" afterPath="$PROJECT_DIR$/Views/userlist.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/advert.php" afterPath="$PROJECT_DIR$/advert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userlist.php" afterPath="$PROJECT_DIR$/userlist.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,41 +23,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userlist.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/userlist.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="173" lean-forward="true" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="173" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userlist.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userlist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adlist.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/user.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state relative-caret-position="260">
+              <caret line="50" column="128" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="128" />
+              <folding>
+                <marker date="1518743808652" expanded="true" signature="2724:2749" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/advert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user.php">
+      <file leaf-file-name="createadvert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createadvert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/register.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="54" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="38" column="1" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="226">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -62,16 +98,61 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="112" column="145" lean-forward="false" selection-start-line="112" selection-start-column="145" selection-end-line="112" selection-end-column="145" />
+            <state relative-caret-position="552">
+              <caret line="138" column="5" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
               <folding>
-                <marker date="1518741016731" expanded="true" signature="503:529" ph="SELECT usern... users" />
-                <marker date="1518741016731" expanded="true" signature="889:970" ph="SELECT usern... users" />
-                <marker date="1518741016731" expanded="true" signature="1469:1522" ph="SELECT usern... users" />
-                <marker date="1518741016731" expanded="true" signature="2270:2393" ph="INSERT INTO users... " />
-                <marker date="1518741016731" expanded="true" signature="3311:3424" ph="UPDATE users... " />
-                <marker date="1518741016731" expanded="true" signature="3317:3399" ph="INSERT INTO users... " />
-                <marker date="1518741016731" expanded="true" signature="4120:4173" ph="SELECT passw... users" />
+                <marker date="1518746326526" expanded="true" signature="503:529" ph="SELECT usern... users" />
+                <marker date="1518746326526" expanded="true" signature="889:970" ph="SELECT usern... users" />
+                <marker date="1518746326526" expanded="true" signature="1469:1522" ph="SELECT usern... users" />
+                <marker date="1518746326526" expanded="true" signature="2270:2393" ph="INSERT INTO users... " />
+                <marker date="1518746326526" expanded="true" signature="3318:3431" ph="UPDATE users... " />
+                <marker date="1518746326526" expanded="true" signature="3324:3406" ph="INSERT INTO users... " />
+                <marker date="1518746326526" expanded="true" signature="4081:4123" ph="DELETE FROm " />
+                <marker date="1518746326526" expanded="true" signature="4092:4123" ph="UPDATE users... " />
+                <marker date="1518746326526" expanded="true" signature="4559:4612" ph="SELECT passw... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Advert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Advert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+              <folding>
+                <marker date="1518746827998" expanded="true" signature="494:560" ph="DELETE FROM " />
+                <marker date="1518746827998" expanded="true" signature="500:520" ph="DELETE FROM " />
+                <marker date="1518746827998" expanded="true" signature="521:554" ph="SELECT DATED... " />
+                <marker date="1518746827998" expanded="true" signature="1095:1225" ph="SELECT id, t... adverts" />
+                <marker date="1518746827998" expanded="true" signature="1095:1227" ph="SELECT id, t... adverts" />
+                <marker date="1518746827998" expanded="true" signature="1095:1229" ph="SELECT id, t... adverts" />
+                <marker date="1518746827998" expanded="true" signature="1123:1221" ph="INSERT INTO adverts... " />
+                <marker date="1518746827998" expanded="true" signature="2028:2188" ph="INSERT INTO adverts... " />
+                <marker date="1518746827998" expanded="true" signature="2158:2186" ph="SELECT ADDDA... " />
+                <marker date="1518746827998" expanded="true" signature="2983:3013" ph="DELETE FROM " />
+                <marker date="1518746827998" expanded="true" signature="2983:3015" ph="DELETE FROM " />
+                <marker date="1518746827998" expanded="true" signature="3295:3350" ph="DELETE FROM " />
+                <marker date="1518746827998" expanded="true" signature="4102:4241" ph="UPDATE adver... " />
+                <marker date="1518746827998" expanded="true" signature="4199:4227" ph="SELECT ADDDA... " />
+                <marker date="1518746827998" expanded="true" signature="4831:4910" ph="SELECT title... adverts" />
+                <marker date="1518746827998" expanded="true" signature="6532:6568" ph="SELECT id, t... adverts" />
+                <marker date="1518746827998" expanded="true" signature="6990:7125" ph="SELECT adver... saved" />
+                <marker date="1518746827998" expanded="true" signature="7556:7616" ph="SELECt FROM saved" />
+                <marker date="1518746827998" expanded="true" signature="8077:8132" ph="INSERT INTO adverts... " />
+                <marker date="1518746827998" expanded="true" signature="8581:8638" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advert.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/advert.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+              <folding>
+                <marker date="1518746808764" expanded="true" signature="74:1324" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,21 +193,21 @@
         <option value="$PROJECT_DIR$/shop-login.php" />
         <option value="$PROJECT_DIR$/searchads.php" />
         <option value="$PROJECT_DIR$/Views/adlist.phtml" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/createadvert.php" />
-        <option value="$PROJECT_DIR$/advert.php" />
         <option value="$PROJECT_DIR$/watchadlist.php" />
-        <option value="$PROJECT_DIR$/Models/Advert.php" />
         <option value="$PROJECT_DIR$/Views/watchadlist.phtml" />
         <option value="$PROJECT_DIR$/Views/template/thumbnail.phtml" />
         <option value="$PROJECT_DIR$/Views/template/header.phtml" />
-        <option value="$PROJECT_DIR$/Views/advert.phtml" />
+        <option value="$PROJECT_DIR$/Views/template/logout.phtml" />
+        <option value="$PROJECT_DIR$/user.php" />
         <option value="$PROJECT_DIR$/userlist.php" />
         <option value="$PROJECT_DIR$/Views/userlist.phtml" />
-        <option value="$PROJECT_DIR$/Views/template/logout.phtml" />
-        <option value="$PROJECT_DIR$/Models/User.php" />
-        <option value="$PROJECT_DIR$/user.php" />
         <option value="$PROJECT_DIR$/Views/user.phtml" />
+        <option value="$PROJECT_DIR$/advert.php" />
+        <option value="$PROJECT_DIR$/Models/User.php" />
+        <option value="$PROJECT_DIR$/Views/advert.phtml" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Models/Advert.php" />
       </list>
     </option>
   </component>
@@ -319,12 +400,12 @@
       <workItem from="1517855863480" duration="6263000" />
       <workItem from="1518091805862" duration="8191000" />
       <workItem from="1518565409223" duration="47988000" />
-      <workItem from="1518726686893" duration="14999000" />
+      <workItem from="1518726686893" duration="20304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121235000" />
+    <option name="totallyTimeSpent" value="126540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -518,22 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/createadvert.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -574,22 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/watchadlist.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/advert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/watchadlist.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -603,64 +652,6 @@
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/advert.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding>
-            <marker date="1518737608960" expanded="true" signature="74:1324" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createadvert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/template/thumbnail.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Advert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="136" selection-end-column="5" />
-          <folding>
-            <marker date="1518733540657" expanded="true" signature="494:560" ph="DELETE FROM " />
-            <marker date="1518733540657" expanded="true" signature="500:520" ph="DELETE FROM " />
-            <marker date="1518733540657" expanded="true" signature="521:554" ph="SELECT DATED... " />
-            <marker date="1518733540657" expanded="true" signature="1095:1225" ph="SELECT id, t... adverts" />
-            <marker date="1518733540657" expanded="true" signature="1095:1227" ph="SELECT id, t... adverts" />
-            <marker date="1518733540657" expanded="true" signature="1095:1229" ph="SELECT id, t... adverts" />
-            <marker date="1518733540657" expanded="true" signature="1123:1221" ph="INSERT INTO adverts... " />
-            <marker date="1518733540657" expanded="true" signature="2028:2188" ph="INSERT INTO adverts... " />
-            <marker date="1518733540657" expanded="true" signature="2158:2186" ph="SELECT ADDDA... " />
-            <marker date="1518733540657" expanded="true" signature="2924:3003" ph="SELECT title... adverts" />
-            <marker date="1518733540657" expanded="true" signature="4625:4661" ph="SELECT id, t... adverts" />
-            <marker date="1518733540657" expanded="true" signature="5083:5218" ph="SELECT adver... saved" />
-            <marker date="1518733540657" expanded="true" signature="5649:5709" ph="SELECt FROM saved" />
-            <marker date="1518733540657" expanded="true" signature="6170:6225" ph="INSERT INTO adverts... " />
-            <marker date="1518733540657" expanded="true" signature="6674:6731" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,30 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/userlist.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="83" lean-forward="false" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="38" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -712,34 +679,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/User.php">
+    <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="112" column="145" lean-forward="false" selection-start-line="112" selection-start-column="145" selection-end-line="112" selection-end-column="145" />
-          <folding>
-            <marker date="1518741016731" expanded="true" signature="503:529" ph="SELECT usern... users" />
-            <marker date="1518741016731" expanded="true" signature="889:970" ph="SELECT usern... users" />
-            <marker date="1518741016731" expanded="true" signature="1469:1522" ph="SELECT usern... users" />
-            <marker date="1518741016731" expanded="true" signature="2270:2393" ph="INSERT INTO users... " />
-            <marker date="1518741016731" expanded="true" signature="3311:3424" ph="UPDATE users... " />
-            <marker date="1518741016731" expanded="true" signature="3317:3399" ph="INSERT INTO users... " />
-            <marker date="1518741016731" expanded="true" signature="4120:4173" ph="SELECT passw... users" />
-          </folding>
+        <state relative-caret-position="124">
+          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/template/thumbnail.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="101" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/watchadlist.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/createadvert.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="41" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createadvert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/user.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="260">
+          <caret line="50" column="128" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="128" />
+          <folding>
+            <marker date="1518743808652" expanded="true" signature="2724:2749" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/userlist.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="173" lean-forward="true" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="138" column="5" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <marker date="1518746326526" expanded="true" signature="503:529" ph="SELECT usern... users" />
+            <marker date="1518746326526" expanded="true" signature="889:970" ph="SELECT usern... users" />
+            <marker date="1518746326526" expanded="true" signature="1469:1522" ph="SELECT usern... users" />
+            <marker date="1518746326526" expanded="true" signature="2270:2393" ph="INSERT INTO users... " />
+            <marker date="1518746326526" expanded="true" signature="3318:3431" ph="UPDATE users... " />
+            <marker date="1518746326526" expanded="true" signature="3324:3406" ph="INSERT INTO users... " />
+            <marker date="1518746326526" expanded="true" signature="4081:4123" ph="DELETE FROm " />
+            <marker date="1518746326526" expanded="true" signature="4092:4123" ph="UPDATE users... " />
+            <marker date="1518746326526" expanded="true" signature="4559:4612" ph="SELECT passw... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/advert.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+          <folding>
+            <marker date="1518746808764" expanded="true" signature="74:1324" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Advert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <folding>
+            <marker date="1518746827998" expanded="true" signature="494:560" ph="DELETE FROM " />
+            <marker date="1518746827998" expanded="true" signature="500:520" ph="DELETE FROM " />
+            <marker date="1518746827998" expanded="true" signature="521:554" ph="SELECT DATED... " />
+            <marker date="1518746827998" expanded="true" signature="1095:1225" ph="SELECT id, t... adverts" />
+            <marker date="1518746827998" expanded="true" signature="1095:1227" ph="SELECT id, t... adverts" />
+            <marker date="1518746827998" expanded="true" signature="1095:1229" ph="SELECT id, t... adverts" />
+            <marker date="1518746827998" expanded="true" signature="1123:1221" ph="INSERT INTO adverts... " />
+            <marker date="1518746827998" expanded="true" signature="2028:2188" ph="INSERT INTO adverts... " />
+            <marker date="1518746827998" expanded="true" signature="2158:2186" ph="SELECT ADDDA... " />
+            <marker date="1518746827998" expanded="true" signature="2983:3013" ph="DELETE FROM " />
+            <marker date="1518746827998" expanded="true" signature="2983:3015" ph="DELETE FROM " />
+            <marker date="1518746827998" expanded="true" signature="3295:3350" ph="DELETE FROM " />
+            <marker date="1518746827998" expanded="true" signature="4102:4241" ph="UPDATE adver... " />
+            <marker date="1518746827998" expanded="true" signature="4199:4227" ph="SELECT ADDDA... " />
+            <marker date="1518746827998" expanded="true" signature="4831:4910" ph="SELECT title... adverts" />
+            <marker date="1518746827998" expanded="true" signature="6532:6568" ph="SELECT id, t... adverts" />
+            <marker date="1518746827998" expanded="true" signature="6990:7125" ph="SELECT adver... saved" />
+            <marker date="1518746827998" expanded="true" signature="7556:7616" ph="SELECt FROM saved" />
+            <marker date="1518746827998" expanded="true" signature="8077:8132" ph="INSERT INTO adverts... " />
+            <marker date="1518746827998" expanded="true" signature="8581:8638" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>

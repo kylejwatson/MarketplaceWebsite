@@ -48,18 +48,15 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input id="submit-btn" class="btn btn-default" type="submit" value="Submit" name="submit" />
+                <a class='btn btn-default pull-right' href='userlist.php?id=<?php echo $view->username; ?>'> Delete Account </a>
             </div>
+
         </div>
     </form>
     <?php if(isset($view->status)) : ?>
         <div class="alert alert-danger">
             <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
             <?php echo $view->status; ?>
-        </div>
-    <?php else: ?>
-        <div class="alert alert-info">
-            <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
-            Details changed successfully.
         </div>
     <?php endif; endif;
 require('template/footer.phtml'); ?>

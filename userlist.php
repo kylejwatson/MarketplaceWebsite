@@ -19,6 +19,10 @@ require_once('Models/User.php');
 require_once('Models/DBConnection.php');
 $conn = DBConnection::Instance();
 $user = new User('');
+if(isset($_GET['id'])){
+    $user->username = $_GET['id'];
+    $user->deleteUser($conn);
+}
 
 //Get a list of all ads with immediate details
 $userSuccess = $user->getUsers($conn);

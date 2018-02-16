@@ -101,7 +101,7 @@ class User
     }
 
     /**
-     * Add user details to database
+     * Change user details in the database
      * @param PDO $conn
      * @param string $password
      * @param string $address1
@@ -117,6 +117,20 @@ class User
         $stmt->bindParam('address1', $address1);
         $stmt->bindParam('address2', $address2);
         $stmt->bindParam('mobile', $mobile);
+        $result = $stmt->execute();
+        if(!$result){
+            return "Statement Failed: ". $stmt->errorInfo();
+        }
+        return "Success";
+    }
+    /**
+     * Delete user from the database
+     * @param PDO $conn
+     * @return string
+     */
+    public function deleteUser($conn){
+        $stmt = $conn->prepare("DELETE FROM users WHERE username=:username");
+        $stmt->bindParam('username', $this->username);
         $result = $stmt->execute();
         if(!$result){
             return "Statement Failed: ". $stmt->errorInfo();

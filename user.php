@@ -22,6 +22,15 @@ if(isset($_GET["id"])) {
 
 require_once('Models/DBConnection.php');
 $conn = DBConnection::Instance();
+
+if(isset($_POST['submit']) && ($_SESSION['user'] === "admin@admin" || $_SESSION['user'] === $user->username)){
+    $conn = DBConnection::Instance();
+    //Add new user to database
+    $result = $user->editUser($conn, $_POST['password'], $_POST['address1'], $_POST['address2'], $_POST['mobile']);
+    if ($result != "Success") {
+        $view->status = $result;
+    }
+}
 //Attempt to get details of user
 $details = $user->getDetails($conn);
 //Redirect if retrieval fails

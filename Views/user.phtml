@@ -17,5 +17,50 @@
         <p class="list-group-item-text"> <?php echo $view->mobile; ?></p>
     </li>
 </ul>
-<?php require('template/footer.phtml'); ?>
+
+<?php if(isset($view->user)) if($view->user === "admin@admin" || $view->user === $view->username):?>
+    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="password">Password: </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" name="password" value="" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="addr1">Address line 1: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="addr1" name="address1" value=" <?php echo $view->address1; ?>"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="addr2">Address line 2: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="addr2" name="address2" value="<?php echo $view->address2; ?>"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="mob">Mobile phone number: </label>
+            <div class="col-sm-10">
+                <input type="tel" maxlength="12" class="form-control" id="mob" name="mobile" value="<?php echo $view->mobile; ?>" required/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input id="submit-btn" class="btn btn-default" type="submit" value="Submit" name="submit" />
+            </div>
+        </div>
+    </form>
+    <?php if(isset($view->status)) : ?>
+        <div class="alert alert-danger">
+            <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
+            <?php echo $view->status; ?>
+        </div>
+    <?php else: ?>
+        <div class="alert alert-info">
+            <span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>
+            Details changed successfully.
+        </div>
+    <?php endif; endif;
+require('template/footer.phtml'); ?>
 

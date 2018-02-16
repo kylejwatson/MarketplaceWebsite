@@ -101,6 +101,30 @@ class User
     }
 
     /**
+     * Add user details to database
+     * @param PDO $conn
+     * @param string $password
+     * @param string $address1
+     * @param string $address2
+     * @param string $mobile
+     * @return string
+     */
+    public function editUser($conn, $password, $address1, $address2, $mobile){
+        $stmt = $conn->prepare("UPDATE users SET password=:password,address1=:address1,address2=:address2,mobile=:mobile WHERE username=:username");
+        $stmt->bindParam('username', $this->username);
+        $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam('password', $hashedPass);
+        $stmt->bindParam('address1', $address1);
+        $stmt->bindParam('address2', $address2);
+        $stmt->bindParam('mobile', $mobile);
+        $result = $stmt->execute();
+        if(!$result){
+            return "Statement Failed: ". $stmt->errorInfo();
+        }
+        return "Success";
+    }
+
+    /**
      * Compare password hashes for user
      * @param PDO $conn
      * @param string $password

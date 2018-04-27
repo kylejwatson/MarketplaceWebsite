@@ -26,7 +26,6 @@ if(!is_string($adSuccess)){
             array_push($view->img,"images/adverts/default.png");
     }
     $view->total = count($view->ads);
+    //show page view
+    require_once('Views/nextads.phtml');
 }
-
-//show page view
-require_once('Views/nextads.phtml');

@@ -1,6 +1,8 @@
 <?php require('template/header.phtml') ?>
 
 <h3>Your watched adverts</h3>
+<div>
+<ul>
 <?php if(isset($view->ads) ){
     $view->watch = true;
     for ($i = 0; $i < $view->total; $i++) {
@@ -9,5 +11,7 @@
     }
 }
 ?>
+</ul>
+</div>
 <?php require('template/footer.phtml'); ?>
 

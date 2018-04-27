@@ -9,23 +9,7 @@ if(isset($_SESSION["user"]))
 
 $view->pageTitle = 'Search Adverts';
 if(isset($_POST['submit'])) {
-
-    $d = isset($_POST['digital']);
-    $n = isset($_POST['notdigital']);
-
-    if(!isset($_POST['title']))
-        $_POST['title'] = '';
-    if(!isset($_POST['maxprice']))
-        $_POST['maxprice'] = 9999.99;
-    if(!isset($_POST['minprice']))
-        $_POST['minprice'] = 0;
-
-    $view->dig = $d;
-    $view->not = $n;
     $view->title = $_POST['title'];
-    $view->max = $_POST['maxprice'];
-    $view->min = $_POST['minprice'];
-
 }
 
 //showpage view

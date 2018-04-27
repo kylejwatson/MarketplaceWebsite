@@ -44,7 +44,8 @@ function load() {
 function loadAds() {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', file, true);
-    //xhr.setRequestHeader("Content-type","");
+    if(!formdata)
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         var DONE = 4;
         var OK = 200;
@@ -57,8 +58,8 @@ function loadAds() {
     }
     var senddata;
     if(formdata) {
-        formdata.set("offset", off);
-        senddata = formdata;
+        data.set("offset", off);
+        senddata = data;
     }else{
         senddata = 'offset='+off;
     }

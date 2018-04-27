@@ -59,7 +59,7 @@ class Advert
         if($newAd !== $args[3])
             return "No special characters allowed in min price";
         $in  = str_repeat('?,', count($dig) - 1) . '?';*/
-        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE :title OR description LIKE :title) AND price <= :maximum AND price >= :minimum AND digital IN (:digital1,:digital2) ORDER BY expire DESC LIMIT :limit OFFSET :offset");
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE :title OR description LIKE :title) AND price <= :maximum AND price >= :minimum AND digital IN (:digital1,:digital2) ORDER BY id DESC LIMIT :limit OFFSET :offset");
         $stmt->bindParam('title', $title);
         //$stmt->bindParam('description', $description);
         $stmt->bindParam('maximum', $max);
@@ -175,8 +175,6 @@ class Advert
         $stmt->bindParam('description', $description);
         $stmt->bindParam('price', $price);
         $stmt->bindValue('digital', ($digital ? 1 : 0));
-        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
-        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();
@@ -242,7 +240,7 @@ class Advert
      * @return string|array
      */
     public function getAds($conn, $limit, $offset){
-        $query = "SELECT id, title, price FROM adverts ORDER BY expire DESC LIMIT :limit OFFSET :offset";
+        $query = "SELECT id, title, price FROM adverts ORDER BY id DESC LIMIT :limit OFFSET :offset";
         $offset -= 1;
         $offset *= $limit;
         $stmt = $conn->prepare($query);

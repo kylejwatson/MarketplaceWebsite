@@ -4,7 +4,7 @@ require_once('Models/Advert.php');
 require_once('Models/DBConnection.php');
 $conn = DBConnection::Instance();
 $ad = new Advert('');
-$view->limit = 5;
+$view->limit = 12;
 $view->offset = 1;
 if(isset($_POST['offset']) ){
     $view->offset = (int) $_POST['offset'];
@@ -26,9 +26,7 @@ if(!is_string($adSuccess)){
             array_push($view->img,"images/adverts/default.png");
     }
     $view->total = count($view->ads);
-    $result = array($adSuccess,$view->img,$view->total);
-    echo json_encode($result);
 }
 
 //show page view
-//require_once('Views/nextads.phtml');
+require_once('Views/nextads.phtml');

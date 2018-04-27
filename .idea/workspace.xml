@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0b0c971-f0dd-4621-8cf4-98b4b13b3b64" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/adlist.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/adlist.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/infinitescroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/infinitescroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/searchads.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/searchads.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchnextads.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchnextads.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,20 +91,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchads.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="searchads.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/searchads.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="323">
+              <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchnextads.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="searchnextads.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchnextads.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="221">
+              <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -211,11 +211,11 @@
         <option value="$PROJECT_DIR$/Views/nextads.phtml" />
         <option value="$PROJECT_DIR$/Views/watchadlist.phtml" />
         <option value="$PROJECT_DIR$/searchads.php" />
-        <option value="$PROJECT_DIR$/Views/searchads.phtml" />
         <option value="$PROJECT_DIR$/nextads.php" />
         <option value="$PROJECT_DIR$/Views/adlist.phtml" />
         <option value="$PROJECT_DIR$/js/infinitescroll.js" />
         <option value="$PROJECT_DIR$/searchnextads.php" />
+        <option value="$PROJECT_DIR$/Views/searchads.phtml" />
       </list>
     </option>
   </component>
@@ -253,6 +253,11 @@
             <path>
               <item name="workspace2" type="b2602c69:ProjectViewProjectNode" />
               <item name="workspace2" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="workspace2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workspace2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="workspace2" type="b2602c69:ProjectViewProjectNode" />
@@ -403,24 +408,24 @@
       <workItem from="1524821617438" duration="161000" />
       <workItem from="1524821937970" duration="106000" />
       <workItem from="1524822105736" duration="30000" />
-      <workItem from="1524822247621" duration="26408000" />
+      <workItem from="1524822247621" duration="27008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164778000" />
+    <option name="totallyTimeSpent" value="165378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="0" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="5" sideWeight="0.511713" side_tool="true" visible="true" weight="0.30247718" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.511713" side_tool="true" visible="true" weight="0.30247718" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.48828697" weight="0.3011734" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" visible="true" weight="0.0875" />
       <window_info id="Structure" order="2" side_tool="true" />
@@ -695,31 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nextads.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/searchads.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/searchads.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -730,10 +714,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/searchads.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nextads.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/searchnextads.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="221">
+          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/searchads.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
         </state>
       </provider>
     </entry>

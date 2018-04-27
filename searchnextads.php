@@ -31,6 +31,9 @@ if(!isset($_POST['maxprice']))
     $_POST['maxprice'] = 9999.99;
 if(!isset($_POST['minprice']))
     $_POST['minprice'] = 0;
+
+if($_POST['maxprice'] == 0)
+    $_POST['maxprice'] = 9999.99;
 //Fetch every matching adverts imediate details
 $adSuccess = $ad->searchAds($conn,$_POST['title'],(float) $_POST['maxprice'],(float) $_POST['minprice'],$dig, $view->limit, $view->offset);
 if(count($adSuccess) !== 0 &! is_string($adSuccess)) {

@@ -1,0 +1,7 @@
+<?php if(isset($view->ads) ){
+    for ($i = 0; $i < $view->total; $i++) {
+        $view->curAd = $i;
+        require('template/thumbnail.phtml');
+    }
+}
+?>

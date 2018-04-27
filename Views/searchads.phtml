@@ -47,12 +47,15 @@
 <?php if(isset($view->ads) ): ?>
     <div class="col-sm-9">
         <ul>
+            <div class="row">
             <?php
             for ($i = 0; $i < $view->total; $i++) {
                 $view->curAd = $i;
                 require('template/thumbnail.phtml');
             }?>
+            </div>
         </ul>
     </div>
 <?php endif;?>
+
 <?php require('template/footer.phtml'); ?>

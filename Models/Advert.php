@@ -42,8 +42,11 @@ class Advert
      * @param array $dig
      * @return string|array
      */
-    public function searchAds($conn, $args, $dig){
-        $newAd = strip_tags($args[0]);
+    public function searchAds($conn, $title,$max,$min, $dig, $limit, $offset){
+        $offset -= 1;
+        $offset *= $limit;
+        $title = '%'.$title.'%';
+        /*$newAd = strip_tags($args[0]);
         if($newAd !== $args[0])
             return "No special characters allowed in title";
         $newAd = strip_tags($args[1]);
@@ -55,13 +58,18 @@ class Advert
         $newAd = strip_tags($args[3]);
         if($newAd !== $args[3])
             return "No special characters allowed in min price";
-        $in  = str_repeat('?,', count($dig) - 1) . '?';
-        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE ? OR description LIKE ?) AND price <= ? AND price >= ? AND digital IN ($in)");
-        $args[0] = "%".$args[0]."%";
-        $args[1] = "%".$args[1]."%";
-        $args[2] = ($args[2] === '' ? 99999 : $args[2]);
-        $args[3] = ($args[3] === '' ? 0 : $args[3]);
-        $result = $stmt->execute(array_merge($args,$dig));
+        $in  = str_repeat('?,', count($dig) - 1) . '?';*/
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE :title OR description LIKE :title) AND price <= :maximum AND price >= :minimum AND digital IN (:digital1,:digital2) ORDER BY expire DESC LIMIT :limit OFFSET :offset");
+        $stmt->bindParam('title', $title);
+        //$stmt->bindParam('description', $description);
+        $stmt->bindParam('maximum', $max);
+        $stmt->bindParam('minimum', $min);
+        $stmt->bindValue('digital1', $dig[0],  PDO::PARAM_INT);
+        $stmt->bindValue('digital2', $dig[1],  PDO::PARAM_INT);
+        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
+        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
+        $result = $stmt->execute();
+
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();
         return $stmt->fetchAll();
@@ -167,6 +175,8 @@ class Advert
         $stmt->bindParam('description', $description);
         $stmt->bindParam('price', $price);
         $stmt->bindValue('digital', ($digital ? 1 : 0));
+        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
+        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();
@@ -213,14 +223,31 @@ class Advert
         }
         return "Success";
     }
+    /**
+     * Gets number of ads in the database
+     * @param PDO $conn
+     * @return string|array
+     */
+    public function countAds($conn){
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM adverts");
+        $result = $stmt->execute();
+        if(!$result)
+            return "Statement Failed: ". $stmt->errorInfo();
+        return $stmt->fetch()[0];
+    }
 
     /**
      * Gets every ad in the database
      * @param PDO $conn
      * @return string|array
      */
-    public function getAds($conn){
-        $stmt = $conn->prepare("SELECT id, title, price FROM adverts");
+    public function getAds($conn, $limit, $offset){
+        $query = "SELECT id, title, price FROM adverts ORDER BY expire DESC LIMIT :limit OFFSET :offset";
+        $offset -= 1;
+        $offset *= $limit;
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
+        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();

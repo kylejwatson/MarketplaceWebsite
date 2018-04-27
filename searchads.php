@@ -13,18 +13,26 @@ if(isset($_POST['submit'])) {
     require_once('Models/DBConnection.php');
     $conn = DBConnection::Instance();
     $ad = new Advert('');
+    $view->limit = 20;
+    $view->offset = 1;
+    if(isset($_GET['limit']) ){
+        $view->limit = (int) $_GET['limit'];
+    }
+    if(isset($_GET['offset']) ){
+        $view->offset = (int) $_GET['offset'];
+    }
     //Create an array for checkboxes if details have been submitted
     $dig = array(0,1);
     $d = isset($_POST['digital']);
     $n = isset($_POST['notdigital']);
     //Check for real and digital if both or none have been selected
     if($d)
-        $dig = array(1);
+        $dig = array(1,1);
     if($n){
         if ($d)
             $dig = array(0,1);
         else
-            $dig = array(0);
+            $dig = array(0,0);
     }
     //Set defaults if filters havent been entered
     if(!isset($_POST['title']))
@@ -34,7 +42,7 @@ if(isset($_POST['submit'])) {
     if(!isset($_POST['minprice']))
         $_POST['minprice'] = 0;
     //Fetch every matching adverts imediate details
-    $adSuccess = $ad->searchAds($conn,array($_POST['title'],$_POST['title'],$_POST['maxprice'],$_POST['minprice']),$dig);
+    $adSuccess = $ad->searchAds($conn,$_POST['title'],(float) $_POST['maxprice'],(float) $_POST['minprice'],$dig, $view->limit, $view->offset);
     if(count($adSuccess) !== 0 &! is_string($adSuccess)) {
         $view->ads = $adSuccess;
         $view->img = array();
@@ -48,6 +56,7 @@ if(isset($_POST['submit'])) {
                 array_push($view->img, "images/adverts/default.png");
         }
         $view->total = count($view->ads);
+
     }
 }
 

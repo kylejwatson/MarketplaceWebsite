@@ -262,6 +262,8 @@ class Advert
      * @return string|array
      */
     public function getSavedAds($conn, $user, $limit, $offset){
+        $offset -= 1;
+        $offset *= $limit;
         $stmt = $conn->prepare("SELECT adverts.id, adverts.title, adverts.price FROM saved INNER JOIN adverts ON saved.id = adverts.id WHERE saved.username = :username ORDER BY id DESC LIMIT :limit OFFSET :offset");
         $stmt->bindParam('username', $user);
         $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);

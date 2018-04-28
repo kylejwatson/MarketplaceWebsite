@@ -20,6 +20,7 @@ $view->offset = 1;
 if(isset($_POST['offset']) ){
     $view->offset = (int) $_POST['offset'];
 }
+//echo $view->offset;
 
 //Retrieve list of saved ads
 $adSuccess = $ad->getSavedAds($conn, $view->user, $view->limit, $view->offset);

@@ -114,6 +114,8 @@ class Advert
         $stmt = $conn->prepare("SELECT LAST_INSERT_ID()");
         $stmt->execute();
         $this->id = $stmt->fetchColumn();
+        if(empty($list))
+            return "Success";
         return $this->uploadImages($list);
     }
     /**
@@ -203,6 +205,7 @@ class Advert
     private function uploadImages($list){
         $target_dir = "images/adverts/";
         $target_file_id = $target_dir . $this->id . "_";
+
         $total = count($list["name"]);
         for ($i = 0; $i < $total; $i++) {
             if($list["error"][$i] !==0)
@@ -258,9 +261,11 @@ class Advert
      * @param string $user
      * @return string|array
      */
-    public function getSavedAds($conn, $user){
-        $stmt = $conn->prepare("SELECT adverts.id, adverts.title, adverts.price FROM saved INNER JOIN adverts ON saved.id = adverts.id WHERE saved.username = :username");
+    public function getSavedAds($conn, $user, $limit, $offset){
+        $stmt = $conn->prepare("SELECT adverts.id, adverts.title, adverts.price FROM saved INNER JOIN adverts ON saved.id = adverts.id WHERE saved.username = :username ORDER BY id DESC LIMIT :limit OFFSET :offset");
         $stmt->bindParam('username', $user);
+        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
+        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();

@@ -1,17 +1,29 @@
 <?php require('template/header.phtml') ?>
 
 <h3>Your watched adverts</h3>
-<div>
+<!--<div>-->
+<!--<ul>-->
+<?php //if(isset($view->ads) ){
+//    $view->watch = true;
+//    for ($i = 0; $i < $view->total; $i++) {
+//        $view->curAd = $i;
+//        require('template/thumbnail.phtml');
+//    }
+//}
+//?>
+<!--</ul>-->
+<!--    -->
+<!--</div>-->
 <ul>
-<?php if(isset($view->ads) ){
-    $view->watch = true;
-    for ($i = 0; $i < $view->total; $i++) {
-        $view->curAd = $i;
-        require('template/thumbnail.phtml');
-    }
-}
-?>
+    <div id="adspace">
+
+    </div>
 </ul>
-</div>
+<script src="../js/infinitescroll.js"></script>
+<script type="text/javascript">
+    file = 'watchnextads.php';
+    load();
+    loadAds();
+</script>
 <?php require('template/footer.phtml'); ?>
 

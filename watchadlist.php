@@ -23,21 +23,21 @@ if (isset($_GET['w']) && isset($_GET['id'])) {
 }
 
 //Retrieve list of saved ads
-$adSuccess = $ad->getSavedAds($conn,$view->user);
-if(count($adSuccess) !== 0) {
-    $view->ads = $adSuccess;
-    $view->img = array();
-    //Get first image for each ad
-    foreach($view->ads as $advert){
-        $imgPath = "images/adverts/$advert[0]_0.*";
-        $result = glob($imgPath);
-        if(count($result)>0)
-            array_push($view->img, glob($imgPath)[0]);
-        else
-            array_push($view->img,"images/adverts/default.png");
-    }
-    $view->total = count($view->ads);
-}
+//$adSuccess = $ad->getSavedAds($conn,$view->user);
+//if(count($adSuccess) !== 0) {
+//    $view->ads = $adSuccess;
+//    $view->img = array();
+//    //Get first image for each ad
+//    foreach($view->ads as $advert){
+//        $imgPath = "images/adverts/$advert[0]_0.*";
+//        $result = glob($imgPath);
+//        if(count($result)>0)
+//            array_push($view->img, glob($imgPath)[0]);
+//        else
+//            array_push($view->img,"images/adverts/default.png");
+//    }
+//    $view->total = count($view->ads);
+//}
 
 //show page view
 require_once('Views/watchadlist.phtml');

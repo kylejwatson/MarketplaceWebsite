@@ -98,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="watchadlist.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="watchadlist.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/watchadlist.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding>
                 <element signature="e#104#129#0#PHP" expanded="true" />
               </folding>
@@ -114,16 +114,16 @@
         <entry file="file://$PROJECT_DIR$/Views/searchads.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
-              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+              <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adlist.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adlist.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -198,9 +198,9 @@
         <option value="$PROJECT_DIR$/Models/Advert.php" />
         <option value="$PROJECT_DIR$/watchnextads.php" />
         <option value="$PROJECT_DIR$/populatedb.php" />
-        <option value="$PROJECT_DIR$/Views/adlist.phtml" />
-        <option value="$PROJECT_DIR$/Views/searchads.phtml" />
         <option value="$PROJECT_DIR$/Views/watchadlist.phtml" />
+        <option value="$PROJECT_DIR$/Views/searchads.phtml" />
+        <option value="$PROJECT_DIR$/Views/adlist.phtml" />
       </list>
     </option>
   </component>
@@ -398,12 +398,12 @@
       <workItem from="1524821617438" duration="161000" />
       <workItem from="1524821937970" duration="106000" />
       <workItem from="1524822105736" duration="30000" />
-      <workItem from="1524822247621" duration="36595000" />
+      <workItem from="1524822247621" duration="36699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174965000" />
+    <option name="totallyTimeSpent" value="175069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -748,27 +748,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
+    <entry file="file://$PROJECT_DIR$/Views/watchadlist.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="255">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#104#129#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/searchads.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/watchadlist.phtml">
+    <entry file="file://$PROJECT_DIR$/Views/adlist.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding>
-            <element signature="e#104#129#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>

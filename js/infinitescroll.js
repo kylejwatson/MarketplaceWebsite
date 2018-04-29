@@ -53,10 +53,13 @@ function loadAds() {
             document.getElementById('loading-div').style.display = "none";
             document.getElementById("adspace").innerHTML += xhr.responseText;
 
-            console.log("off rec" + off);
-            send = true;
-            if (typeof adsLoaded == "function" && xhr.responseText.length > 0) {
-                adsLoaded();
+            if(xhr.responseText.length > 0) {
+                off++;
+                send = true;
+                console.log("off rec" + off);
+                if (typeof adsLoaded == "function") {
+                    adsLoaded();
+                }
             }
         }
         //console.log(xhr.responseText);
@@ -71,5 +74,4 @@ function loadAds() {
     xhr.send(senddata);
     document.getElementById('loading-div').style.display = "block";
     console.log("off send" + off);
-    off++;
 }

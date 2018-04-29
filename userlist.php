@@ -23,13 +23,5 @@ if(isset($_GET['id'])){
     $user->username = $_GET['id'];
     $user->deleteUser($conn);
 }
-
-//Get a list of all ads with immediate details
-$userSuccess = $user->getUsers($conn);
-if(!is_string($userSuccess)){
-    //If retrieval is successful set to view array
-    $view->users = $userSuccess;
-}
-
 //show page view
 require_once('Views/userlist.phtml');

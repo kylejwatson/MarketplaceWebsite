@@ -28,8 +28,13 @@ class User
      * @param PDO $conn
      * @return string|array
      */
-    public function getUsers($conn){
-        $stmt = $conn->prepare("SELECT username FROM users");
+    public function getUsers($conn, $limit, $offset){
+        $offset -= 1;
+        $offset *= $limit;
+        $stmt = $conn->prepare("SELECT username FROM users ORDER BY username DESC LIMIT :limit OFFSET :offset");
+
+        $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
+        $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();

@@ -50,9 +50,14 @@ function loadAds() {
         var DONE = 4;
         var OK = 200;
         if (xhr.readyState == DONE) {
+            document.getElementById('loading-div').style.display = "none";
             document.getElementById("adspace").innerHTML += xhr.responseText;
+
             console.log("off rec" + off);
             send = true;
+            if (typeof adsLoaded == "function" && xhr.responseText.length > 0) {
+                adsLoaded();
+            }
         }
         //console.log(xhr.responseText);
     }
@@ -64,6 +69,7 @@ function loadAds() {
         senddata = 'offset='+off;
     }
     xhr.send(senddata);
+    document.getElementById('loading-div').style.display = "block";
     console.log("off send" + off);
     off++;
 }

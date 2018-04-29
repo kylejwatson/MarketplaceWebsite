@@ -45,7 +45,7 @@ class Advert
     public function searchAds($conn, $title,$max,$min, $dig, $limit, $offset){
         $offset -= 1;
         $offset *= $limit;
-        $title = '%'.$title.'%';
+        //$title = '%'.$title.'%';
         /*$newAd = strip_tags($args[0]);
         if($newAd !== $args[0])
             return "No special characters allowed in title";
@@ -59,9 +59,19 @@ class Advert
         if($newAd !== $args[3])
             return "No special characters allowed in min price";
         $in  = str_repeat('?,', count($dig) - 1) . '?';*/
-        $stmt = $conn->prepare("SELECT id, title, price FROM adverts WHERE (title LIKE :title OR description LIKE :title) AND price <= :maximum AND price >= :minimum AND digital IN (:digital1,:digital2) ORDER BY id DESC LIMIT :limit OFFSET :offset");
+        $stmt = $conn->prepare("SELECT id, title, price FROM adverts 
+                                          WHERE MATCH(title,description) AGAINST (:title IN NATURAL LANGUAGE MODE)
+                                          AND price <= :maximum AND price >= :minimum
+                                          AND digital IN (:digital1,:digital2)
+                                          ORDER BY id DESC LIMIT :limit OFFSET :offset");
+
+
+//        "SELECT id, title, price FROM adverts
+//                                          WHERE (title LIKE :title OR description LIKE :title)
+//                                          AND price <= :maximum AND price >= :minimum
+//                                          AND digital IN (:digital1,:digital2)
+//                                          ORDER BY id DESC LIMIT :limit OFFSET :offset"
         $stmt->bindParam('title', $title);
-        //$stmt->bindParam('description', $description);
         $stmt->bindParam('maximum', $max);
         $stmt->bindParam('minimum', $min);
         $stmt->bindValue('digital1', $dig[0],  PDO::PARAM_INT);
@@ -69,7 +79,7 @@ class Advert
         $stmt->bindParam('limit', $limit,  PDO::PARAM_INT);
         $stmt->bindParam('offset', $offset,  PDO::PARAM_INT);
         $result = $stmt->execute();
-
+        //var_dump($stmt->fetchAll());
         if(!$result)
             return "Statement Failed: ". $stmt->errorInfo();
         return $stmt->fetchAll();

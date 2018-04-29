@@ -3,7 +3,7 @@
     <h3>Search Adverts</h3>
 
     <div id="formcont" class="col-sm-9">
-        <form class="form-horizontal"  enctype="multipart/form-data" id="searchform" onkeyup="search()" onchange="search()">
+        <form class="form-horizontal"  enctype="multipart/form-data" id="searchform" onkeyup="search()">
             <div class="form-group">
                 <label class="control-label col-sm-4" for="title">Keywords: </label>
                 <div class="col-sm-8">
@@ -46,11 +46,12 @@
     </div>
 
     <div class="col-sm-9">
+
         <ul>
             <div id="adspace" class="row">
-
             </div>
         </ul>
+        <div id="loading-div"><div id="loading-symbol"></div><p>Loading...</p></div>
     </div>
 
     <script src="js/infinitescroll.js"></script>
@@ -61,8 +62,11 @@
             document.getElementById("adspace").innerHTML = "";
             data = new FormData(document.getElementById("searchform"));
             off = 1;
-            document.getElementById("formcont").className = "col-sm-3";
+            document.getElementById("formcont").className = "col-sm-9";
             loadAds()
+        }
+        function adsLoaded(){
+            document.getElementById("formcont").className = "col-sm-3";
         }
         load();
         <?php if(isset($view->title)) echo "search();"; ?>

@@ -16,7 +16,7 @@ $conn = DBConnection::Instance();
 //    //echo "$userNo <br>";
 //    $ad->watchAd($conn,"user$userNo@example.com");
 //}
-for($i = 1; true ; $i++){
+for($i = 365850; true ; $i+=2){
     //echo "$i <br>";
     $userNo = ($i %5)+32;
     //echo "$userNo <br>";
